@@ -1,0 +1,32 @@
+<table class="overview" cellspacing="0">
+	<tr>
+		<th><?php print $this->translations->month->name; ?></th>
+		<th><?php print $this->translations->limit; ?></th>
+		<th><?php print $this->translations->spent; ?></th>
+		<th><?php print $this->translations->rest; ?></th>
+	</tr>
+    <?php foreach ($this->months as $month): ?>
+    <tr>
+    	<td>
+    		<a href="<?php print $month->getOverviewLink(); ?>">
+    	        <?php print($month->__toString()); ?>
+	        </a>
+        </td>
+    	<td>
+    		<a href="<?php print $month->getOverviewLink(); ?>">
+    		    <?php print($month->limit); ?>
+	    	</a>
+	    </td>
+    	<td>
+    		<a href="<?php print $month->getOverviewLink(); ?>">
+    	        <?php print($month->spent()) ?>
+	        </a>
+        </td>
+    	<td>
+    		<a href="<?php print $month->getOverviewLink(); ?>">
+    	        <?php print($month->getRest()); ?>
+	        </a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>

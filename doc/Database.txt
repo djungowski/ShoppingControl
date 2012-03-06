@@ -1,0 +1,14 @@
+create table purchase (
+purchase_id INTEGER PRIMARY KEY autoincrement,
+`date` date,
+shop_id integer constraint fk_shop_id references shop (shop_id) on update cascade,
+amount float,
+comment varchar(255));
+
+create table shop (
+shop_id integer primary key autoincrement,
+name varchar(255));
+
+create table month (
+month date primary key,
+`limit` integer);

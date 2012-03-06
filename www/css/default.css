@@ -1,0 +1,106 @@
+body {
+	background-color: #dddddd;
+	color: #000;
+	font-family: helvetica, verdana, sans-serif;
+	font-size: 1em;
+}
+
+a,input {
+	padding: 6px;
+	display: block;
+	color: #000;
+	border: 1px solid #369;
+	margin: 6px 0px;
+}
+
+input {
+	width: 99%;
+	color: #000;
+	font-size: 1em;
+}
+
+a:hover {
+	background-color: #369;
+	color: #fff;
+}
+
+.content {
+	background-color: #ededed;
+	padding: 0.5em;
+}
+
+.message {
+	background-color: #369;
+	color: #fff;
+	padding: 0.2em;
+}
+
+div.message {
+	margin-bottom: 0.4em;
+}
+
+.message p {
+	margin-top: 0;
+	margin-bottom: 0.5em;
+}
+
+.month-rest {
+	background-color: #2CE314;
+	padding: 0.2em;
+}
+
+.copyright {
+	margin-top: 2em;
+	text-align: center;
+}
+
+table {
+	width: 100%;
+	border-width: 1px;
+	border-style: solid none none solid;
+	border-color: #369;
+}
+
+table td {
+	border-width: 1px;
+	border-style: none solid solid none;
+	border-color: #369;
+}
+
+table.overview {
+	border-style: solid;
+}
+
+table.overview td {
+	border-style: none none solid none;
+}
+
+table.overview th {
+	width: 25%;
+	background-color: #369;
+	color: #fff;
+	font-weight: bold;
+	text-align: left;
+}
+
+table.overview td {
+	width: 25%;
+}
+
+table.overview a {
+	color: #000;
+	border-width: 0px;
+	text-decoration: none;
+	background-image: none;
+}
+
+table.overview .amount {
+	text-align: right;
+	vertical-align: top;
+}
+
+table.overview .total {
+	background-color: #369;
+	color: #fff;
+	font-weight: bold;
+}

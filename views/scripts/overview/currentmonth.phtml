@@ -1,0 +1,32 @@
+<?php require_once BASEPATH . '/views/month-rest.phtml'; ?>
+
+<table class="overview" cellspacing="0">
+	<tr>
+		<th>
+		    <?php print $this->translations->date; ?>,
+		    <?php print $this->translations->shop; ?>,
+		    <?php print $this->translations->comment; ?>
+	    </th>
+		<th class="amount"><?php print $this->translations->amount; ?></th>
+	</tr>
+    <?php foreach ($this->purchases as $purchase): ?>
+    <tr>
+    	<td>
+    	    <?php print($purchase['date']); ?>
+    	    <br />
+    	    <?php print($purchase['name']); ?>
+    	    <?php if (!empty($purchase['comment'])): ?>
+    	    <br /><br />
+    	    <strong><?php print $this->translations->comment; ?>:</strong>
+    	    <br />
+    	    <?php print($purchase['comment']); ?>
+    	    <?php endif; ?>
+	    </td>
+    	<td class="amount"><?php print($purchase['amount'] . ' ' . $this->currency); ?></td>
+    </tr>
+    <?php endforeach; ?>
+    <tr>
+    	<td class="total"><?php print($this->translations->spent); ?></td>
+    	<td class="amount total"><?php print($this->spent . ' ' . $this->currency); ?></td>
+    </tr>
+</table>
