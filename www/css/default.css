@@ -104,3 +104,17 @@ table.overview .total {
 	color: #fff;
 	font-weight: bold;
 }
+
+.edit-purchases {
+	border: 1px solid #369;
+	padding: 6px;
+	width: 150px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+.edit-purchases:active {
+	background-color: #369;
+	color: #fff;
+}
