@@ -12,6 +12,8 @@ Zend_Layout::startMvc();
 $config = new Zend_Config_Ini(BASEPATH . '/config/config.ini');
 // Register Config with registry
 Zend_Registry::set('config', $config);
+// Set timezone according to config
+date_default_timezone_set($config->general->timezone);
 // Load Language files according to config
 $translations = new Zend_Config_Ini(BASEPATH . '/language/' . $config->general->language .'.ini', 'translations');
 // Register translations with registry
