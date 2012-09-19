@@ -11,7 +11,7 @@
         });
         
         this.find('.delete').each(function(key, item) {
-            $(item).bind('click', $.fn.purchaseeditor.deleteHandler);
+            $(item).bind('click', {options: options}, $.fn.purchaseeditor.deleteHandler);
         });
     };
     
@@ -36,11 +36,13 @@
     $.fn.purchaseeditor.deleteHandler = function(event) {
         event.preventDefault();
         event.stopPropagation();
-        // @TODO: Implement form submission here
-        $('#edit-purchases-form').submit();
+        var reallyDelete = confirm(event.data.options.safetyQuestion);
+        if (reallyDelete === true) {
+            $('#edit-purchases-form').submit();
+        }
     };
     
     $.fn.purchaseeditor.options = {
-            
+        safetyQuestion: 'Are you sure?'
     };
 })(jQuery, jQuery);

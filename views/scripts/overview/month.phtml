@@ -65,5 +65,7 @@
 <div class="floating-correction"></div>
 
 <script type="text/javascript">
-$('.edit-purchases-buttons').purchaseeditor();
+$('.edit-purchases-buttons').purchaseeditor({
+    safetyQuestion: '<?php print $this->translations->question->deletepurchase; ?>'
+});
 </script>
