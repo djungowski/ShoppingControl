@@ -37,6 +37,7 @@
         event.preventDefault();
         event.stopPropagation();
         // @TODO: Implement form submission here
+        $('#edit-purchases-form').submit();
     };
     
     $.fn.purchaseeditor.options = {

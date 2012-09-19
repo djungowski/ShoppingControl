@@ -13,7 +13,7 @@
 <div class="floating-correction"></div>
 <?php require_once BASEPATH . '/views/month-rest.phtml'; ?>
 
-<form action="" method="post">
+<form action="<?php print URLPATH; ?>/purchase/delete" method="post" id="edit-purchases-form">
 <table class="overview" cellspacing="0">
 	<tr>
 		<th class="delete-purchase">&nbsp;</th>
@@ -27,7 +27,7 @@
     <?php foreach ($this->purchases as $purchase): ?>
     <tr>
     	<td class="delete-purchase">
-    		<input type="checkbox" />
+    		<input type="checkbox" name="purchase_id[]" value="<?php print($purchase['purchase_id']); ?>" />
     	</td>
     	<td>
     	    <?php print($purchase['date']); ?>
