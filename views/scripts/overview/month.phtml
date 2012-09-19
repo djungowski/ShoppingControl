@@ -1,4 +1,7 @@
 <?php require_once BASEPATH . '/views/month-rest.phtml'; ?>
+<a href="#" class="edit-purchases">
+	<?php print $this->translations->edit; ?>
+</a>
 
 <table class="overview" cellspacing="0">
 	<tr>
@@ -30,3 +33,7 @@
     	<td class="amount total"><?php print($this->spent . ' ' . $this->currency); ?></td>
     </tr>
 </table>
+
+<a href="#" class="edit-purchases">
+	<?php print $this->translations->edit; ?>
+</a>
