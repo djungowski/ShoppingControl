@@ -1,10 +1,22 @@
+<script type="text/javascript" src="<?php print URLPATH; ?>/js/plugins/jquery.purchaseeditor.js"></script>
+<div class="edit-purchases-buttons">
+    <a href="#" class="edit-purchases edit">
+    	<?php print $this->translations->edit; ?>
+    </a>
+    <a href="#" class="edit-purchases delete">
+    	<?php print $this->translations->delete; ?>
+    </a>
+    <a href="#" class="edit-purchases cancel">
+    	<?php print $this->translations->cancel; ?>
+    </a>
+</div>
+<div class="floating-correction"></div>
 <?php require_once BASEPATH . '/views/month-rest.phtml'; ?>
-<a href="#" class="edit-purchases">
-	<?php print $this->translations->edit; ?>
-</a>
 
+<form action="" method="post">
 <table class="overview" cellspacing="0">
 	<tr>
+		<th class="delete-purchase">&nbsp;</th>
 		<th>
 		    <?php print $this->translations->date; ?>,
 		    <?php print $this->translations->shop; ?>,
@@ -14,6 +26,9 @@
 	</tr>
     <?php foreach ($this->purchases as $purchase): ?>
     <tr>
+    	<td class="delete-purchase">
+    		<input type="checkbox" />
+    	</td>
     	<td>
     	    <?php print($purchase['date']); ?>
     	    <br />
@@ -29,11 +44,26 @@
     </tr>
     <?php endforeach; ?>
     <tr>
+    	<td class="delete-purchase total">&nbsp;</td>
     	<td class="total"><?php print($this->translations->spent); ?></td>
     	<td class="amount total"><?php print($this->spent . ' ' . $this->currency); ?></td>
     </tr>
 </table>
+</form>
 
-<a href="#" class="edit-purchases">
-	<?php print $this->translations->edit; ?>
-</a>
+<div class="edit-purchases-buttons">
+    <a href="#" class="edit-purchases edit">
+    	<?php print $this->translations->edit; ?>
+    </a>
+    <a href="#" class="edit-purchases delete">
+    	<?php print $this->translations->delete; ?>
+    </a>
+    <a href="#" class="edit-purchases cancel">
+    	<?php print $this->translations->cancel; ?>
+    </a>
+</div>
+<div class="floating-correction"></div>
+
+<script type="text/javascript">
+$('.edit-purchases-buttons').purchaseeditor();
+</script>

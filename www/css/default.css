@@ -19,6 +19,10 @@ input {
 	font-size: 1em;
 }
 
+.floating-correction {
+	clear: both;
+}
+
 a:hover {
 	background-color: #369;
 	color: #fff;
@@ -47,6 +51,7 @@ div.message {
 .month-rest {
 	background-color: #2CE314;
 	padding: 0.2em;
+	margin: 0.3em 0;
 }
 
 .copyright {
@@ -105,6 +110,12 @@ table.overview .total {
 	font-weight: bold;
 }
 
+table.overview .delete-purchase {
+	display: none;
+	width: 4%;
+	padding-left: 6px;
+}
+
 .edit-purchases {
 	border: 1px solid #369;
 	padding: 6px;
@@ -112,6 +123,14 @@ table.overview .total {
 	text-align: center;
 	text-decoration: none;
 	font-weight: bold;
+}
+
+.edit-purchases-buttons {
+	float: right;
+}
+
+.edit-purchases-buttons .delete, .edit-purchases-buttons .cancel {
+	display: none;
 }
 
 .edit-purchases:active {
