@@ -23,7 +23,6 @@ class ShoppingControl_Plugin_Auth extends Zend_Controller_Plugin_Abstract
             $request->setActionName('index');
             return;
         }
-        var_dump($this->_auth->getIdentity());
     }
 
     
