@@ -18,6 +18,10 @@
 
 <body>
 <?php if ($this->showNavigation) { ?>
+<div class="logininfo">
+    <b><?php print $this->translations->login->loggedinas; ?>:</b>
+    <?php print $this->loggedInUser; ?>
+</div>
 <div class="navigation">
     <a href="<?php print URLPATH; ?>/">
         <?php print $this->translations->navigation->new; ?>

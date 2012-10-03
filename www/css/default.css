@@ -129,11 +129,18 @@ table.overview .delete-purchase {
 	float: right;
 }
 
-.edit-purchases-buttons .delete, .edit-purchases-buttons .cancel {
+.edit-purchases-buttons .delete,.edit-purchases-buttons .cancel {
 	display: none;
 }
 
 .edit-purchases:active {
 	background-color: #369;
 	color: #fff;
+}
+
+.logininfo {
+	padding: 6px;
+	background-color: #369;
+	color: white;
+	text-align: right;
 }

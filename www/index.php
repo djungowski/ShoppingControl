@@ -13,10 +13,10 @@ date_default_timezone_set($config->general->timezone);
 // Start session
 Zend_Session::start(
     array(
-    	'remember_me_seconds' => $config->security->session->valid
+    	'remember_me_seconds' => $config->session->valid
     )
 );
-$session = new Zend_Session_Namespace('ShoppingControl');
+$session = new Zend_Session_Namespace($config->session->namespace);
 // Load Language files according to config
 $translations = new Zend_Config_Ini(BASEPATH . '/language/' . $config->general->language .'.ini', 'translations');
 // Register translations with registry

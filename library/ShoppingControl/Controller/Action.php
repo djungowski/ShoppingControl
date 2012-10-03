@@ -13,6 +13,8 @@ class ShoppingControl_Controller_Action extends Zend_Controller_Action
         $this->view->controllerName = $this->getRequest()->getControllerName();
         $this->view->actionName = $this->getRequest()->getActionName();
         $this->view->showNavigation = true;
+        $session = new Zend_Session_Namespace($config->session->namespace);
+        $this->view->loggedInUser = $session->realname;
     }
     
     public function postDispatch()
