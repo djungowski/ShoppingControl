@@ -17,3 +17,8 @@ if ($urlPath == '/') {
     $urlPath = '';
 }
 define('URLPATH', $urlPath);
+
+// Register the autoloader
+require_once LIBPATH . '/Zend/Loader/Autoloader.php';
+$loader = Zend_Loader_Autoloader::getInstance();
+$loader->registerNamespace('ShoppingControl');

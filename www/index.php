@@ -1,9 +1,5 @@
 <?php
 require_once '../bootstrap.php';
-require_once LIBPATH . '/Zend/Loader/Autoloader.php';
-
-// Register the autoloader
-$loader = Zend_Loader_Autoloader::getInstance();
 
 // Use Zend_Layout
 Zend_Layout::startMvc();
@@ -27,6 +23,22 @@ $db = Zend_Db::factory(
 );
 // Register db with registry
 Zend_Registry::set('db', $db);
+
+// Check if a user is logged in
+$authAdapter = new Zend_Auth_Adapter_DbTable(
+    $db,
+    'users',
+    'username',
+    'password'
+);
+$username = 'blubb';
+$password = '';
+
+$authAdapter->setIdentity($username);
+$authAdapter->setCredential($password);
+
+$temp = $authAdapter->authenticate();
+var_dump($temp->isValid());
 
 $front = Zend_Controller_Front::getInstance();
 $front->setParam('noErrorHandler', true);
