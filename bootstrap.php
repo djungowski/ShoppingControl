@@ -1,5 +1,5 @@
 <?php
-define('SHOPPINGCONTROL_VERSION', '0.5');
+define('SHOPPINGCONTROL_VERSION', '0.6');
 
 define('BASEPATH', dirname(__FILE__) . DIRECTORY_SEPARATOR);
 define('LIBPATH', BASEPATH . DIRECTORY_SEPARATOR . 'library');
