@@ -12,3 +12,9 @@ name varchar(255));
 create table month (
 month date primary key,
 `limit` integer);
+
+CREATE TABLE [users] (
+[id] INTEGER PRIMARY KEY autoincrement, 
+[username] VARCHAR(50) UNIQUE NOT NULL, 
+[password] VARCHAR(255) NULL, 
+[real_name] VARCHAR(150) NULL);
