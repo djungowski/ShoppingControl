@@ -5,7 +5,7 @@ body {
 	font-size: 1em;
 }
 
-a, div, p {
+a,div,p {
 	border-radius: 7px;
 }
 
@@ -15,6 +15,10 @@ a,input {
 	color: #fff;
 	border: 1px solid #369;
 	margin: 6px 0px;
+}
+
+h2 {
+	margin-top: 0;
 }
 
 input {
@@ -32,7 +36,7 @@ input[type="submit"] {
 	clear: both;
 }
 
-a:hover, table.overview tr:hover {
+a:hover,table.overview tr:hover {
 	background-color: #369;
 	color: #fff;
 }
@@ -41,6 +45,10 @@ a:hover, table.overview tr:hover {
 	background-color: #059;
 	padding: 0.5em;
 	border-radius: 15px;
+	background-image: url(../img/shopping-control.png);
+	background-repeat: no-repeat;
+	background-position-x: 100%;
+	background-position-y: 5px;
 }
 
 .message {
