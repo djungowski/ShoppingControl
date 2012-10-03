@@ -1,6 +1,6 @@
 body {
-	background-color: #dddddd;
-	color: #000;
+	background-color: #1B2164;
+	color: #fff;
 	font-family: helvetica, verdana, sans-serif;
 	font-size: 1em;
 }
@@ -8,7 +8,7 @@ body {
 a,input {
 	padding: 6px;
 	display: block;
-	color: #000;
+	color: #fff;
 	border: 1px solid #369;
 	margin: 6px 0px;
 }
@@ -23,13 +23,13 @@ input {
 	clear: both;
 }
 
-a:hover {
+a:hover, table.overview tr:hover {
 	background-color: #369;
 	color: #fff;
 }
 
 .content {
-	background-color: #ededed;
+	background-color: #059;
 	padding: 0.5em;
 }
 
@@ -82,7 +82,7 @@ table.overview td {
 
 table.overview th {
 	width: 25%;
-	background-color: #369;
+	background-color: #7B8794;
 	color: #fff;
 	font-weight: bold;
 	text-align: left;
@@ -93,7 +93,6 @@ table.overview td {
 }
 
 table.overview a {
-	color: #000;
 	border-width: 0px;
 	text-decoration: none;
 	background-image: none;
@@ -105,7 +104,7 @@ table.overview .amount {
 }
 
 table.overview .total {
-	background-color: #369;
+	background-color: #7B8794;
 	color: #fff;
 	font-weight: bold;
 }
