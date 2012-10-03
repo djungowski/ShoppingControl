@@ -2,6 +2,13 @@
 class ShoppingControl_Password
 {
     /**
+     * The unsalted and unencrypted password
+     * 
+     * @var String
+     */
+    private $_password;
+    
+    /**
      * Salt 'n' Peppa
      * 
      * @var String
@@ -22,13 +29,21 @@ class ShoppingControl_Password
      */
     private $_saltStartsAt;
     
-    public function __construct($salt, $saltlength)
+    public function __construct($password)
+    {
+        $this->_password = $password;
+    }
+    
+    public function setSalt($salt, $saltlength, $saltStartsAt = 0)
     {
         $this->_salt = $salt;
         $this->_saltlength = $saltlength;
+        $this->saltStartsAt($saltStartsAt);
+        // The moment the salt is set, encrypt the password
+        $this->_password = $this->_hash($this->_password);
     }
     
-    public function hash($password)
+    protected function _hash($password)
     {
         $salt = substr(sha1($this->_salt), $this->_saltStartsAt, $this->_saltlength);
         $hash = $salt . sha1($password);
@@ -40,7 +55,7 @@ class ShoppingControl_Password
      * 
      * @param Integer $index
      */
-    public function saltStartsAt($index)
+    protected function saltStartsAt($index)
     {
        // If the set index + the salt length are greater than 40, throw exception
        // Why 40? Because sha1 creates hashes with length 40
@@ -48,5 +63,10 @@ class ShoppingControl_Password
            throw new InvalidArgumentException('SaltStartsAt + Saltlength must be less or equal 40');
        }
        $this->_saltStartsAt = $index;
+    }
+    
+    public function __toString()
+    {
+        return $this->_password;
     }
 }

@@ -10,6 +10,13 @@ $config = new Zend_Config_Ini(BASEPATH . '/config/config.ini');
 Zend_Registry::set('config', $config);
 // Set timezone according to config
 date_default_timezone_set($config->general->timezone);
+// Start session
+Zend_Session::start(
+    array(
+    	'remember_me_seconds' => $config->security->session->valid
+    )
+);
+$session = new Zend_Session_Namespace('ShoppingControl');
 // Load Language files according to config
 $translations = new Zend_Config_Ini(BASEPATH . '/language/' . $config->general->language .'.ini', 'translations');
 // Register translations with registry
@@ -23,22 +30,40 @@ $db = Zend_Db::factory(
 );
 // Register db with registry
 Zend_Registry::set('db', $db);
+// Defaults
+$username = 'NyanCat';
+$password = new ShoppingControl_Password('q5ryQvNoKE');
+// Check if user data is provided with POST or in a Cookie
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = new ShoppingControl_Password($_POST['password']);
+    $password->setSalt($config->security->password->salt, $config->security->password->saltlength, $config->security->password->saltstartsat);
+} elseif (isset($session->username) && isset($session->password)) {
+    $username = $session->username;
+    // Salting not needed, password is stored encrypted in cookie
+    $password = $session->password;
+}
 
 // Check if a user is logged in
 $authAdapter = new Zend_Auth_Adapter_DbTable(
     $db,
     'users',
     'username',
-    'password'
+    'password',
+    'id'
 );
-$username = 'blubb';
-$password = '';
-
 $authAdapter->setIdentity($username);
 $authAdapter->setCredential($password);
-
-$temp = $authAdapter->authenticate();
-var_dump($temp->isValid());
+$auth = $authAdapter->authenticate();
+// If login has been successful store credentials in session
+if ($auth->isValid()) {
+    $session->username = $username;
+    $session->password = (string)$password;
+    $id = $authAdapter->getResultRowObject();
+    $session->realname = $id->real_name;
+    // Rememeber session for x more minutes (see config for exact value)
+    Zend_Session::rememberMe();
+}
 
 $front = Zend_Controller_Front::getInstance();
 $front->setParam('noErrorHandler', true);
@@ -58,5 +83,8 @@ $router->addRoute(
 );
 $front->setRouter($router);
 $front->setControllerDirectory(BASEPATH . '/controllers');
+
+$plugin = new ShoppingControl_Plugin_Auth($auth);
+$front->registerPlugin($plugin);
 
 $front->dispatch();

@@ -1,22 +1,30 @@
 <?php
 class ShoppingControl_PasswordTest extends PHPUnit_Framework_TestCase
 {
-    public function testHash()
+    public function testToString()
+    {
+        $password = new ShoppingControl_Password('NyanCat');
+        $actual = (string)$password;
+        self::assertSame('NyanCat', $actual);
+    }
+    
+    public function testToStringWithSalt()
     {
         $randomSalt = 'PXrDUHZlAggTx8ieeslw';
-        $password = new ShoppingControl_Password($randomSalt, 16);
+        $password = new ShoppingControl_Password('SomeRandomPassword');
+        $password->setSalt($randomSalt, 16);
         $expected = 'd4622ee1c95d795500b02d5a577bc74f68ed41a55718731abf5445b1';
-        $actual = $password->hash('SomeRandomPassword');
+        $actual = (string)$password;
         self::assertSame($expected, $actual);
     }
     
     public function testSaltStartsAt()
     {
         $randomSalt = 'PXrDUHZlAggTx8ieeslw';
-        $password = new ShoppingControl_Password($randomSalt, 8);
-        $password->saltStartsAt(5);
+        $password = new ShoppingControl_Password('SomeRandomPassword');
+        $password->setSalt($randomSalt, 8, 5);
         $expected = 'ee1c95d700b02d5a577bc74f68ed41a55718731abf5445b1';
-        $actual = $password->hash('SomeRandomPassword');
+        $actual = (string)$password;
         self::assertSame($expected, $actual);
     }
     
@@ -29,7 +37,7 @@ class ShoppingControl_PasswordTest extends PHPUnit_Framework_TestCase
      */
     public function testInvalidSaltStartsAt()
     {
-        $password = new ShoppingControl_Password('foobar', 9);
-        $password->saltStartsAt(32);
+        $password = new ShoppingControl_Password('something');
+        $password->setSalt('foobar', 9, 32);
     }
 }

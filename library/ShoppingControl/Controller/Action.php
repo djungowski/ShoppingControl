@@ -12,6 +12,7 @@ class ShoppingControl_Controller_Action extends Zend_Controller_Action
         $this->view->version = SHOPPINGCONTROL_VERSION;
         $this->view->controllerName = $this->getRequest()->getControllerName();
         $this->view->actionName = $this->getRequest()->getActionName();
+        $this->view->showNavigation = true;
     }
     
     public function postDispatch()

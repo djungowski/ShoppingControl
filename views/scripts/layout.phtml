@@ -17,6 +17,7 @@
 </head>
 
 <body>
+<?php if ($this->showNavigation) { ?>
 <div class="navigation">
     <a href="<?php print URLPATH; ?>/">
         <?php print $this->translations->navigation->new; ?>
@@ -25,10 +26,12 @@
         <?php print $this->translations->navigation->current; ?>
     </a>
 </div>
+<?php } ?>
 
 <div class="content">
     <?php print $this->layout()->content; ?>
 </div>
+<?php if ($this->showNavigation) { ?>
 <div class="navigation">
     <a href="<?php print URLPATH; ?>/overview">
         <?php print $this->translations->navigation->overview; ?>
@@ -37,9 +40,10 @@
         <?php print $this->translations->navigation->admin; ?>
     </a>
 </div>
+<?php } ?>
 <div class="copyright">
     Shopping Control <?php print $this->version ?> -
-    &copy; 2010 Dominik Jungowski
+    &copy; 2012 Dominik Jungowski
 </div>
 </body>
 </html>
