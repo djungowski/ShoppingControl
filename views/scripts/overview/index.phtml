@@ -5,7 +5,13 @@
 		<th><?php print $this->translations->spent; ?></th>
 		<th><?php print $this->translations->rest; ?></th>
 	</tr>
-    <?php foreach ($this->months as $month): ?>
+    <?php foreach ($this->years as $year => $months): ?>
+    <tr>
+    	<td colspan="4" class="year">
+    	        <?php print($year); ?>
+        </td>
+    </tr>
+    <?php foreach ($months as $month): ?>
     <tr>
     	<td>
     		<a href="<?php print $month->getOverviewLink(); ?>">
@@ -28,5 +34,6 @@
 	        </a>
         </td>
     </tr>
+    <?php endforeach; ?>
     <?php endforeach; ?>
 </table>

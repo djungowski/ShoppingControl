@@ -101,6 +101,14 @@ table.overview {
 	border-style: solid;
 }
 
+table.overview .year {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	background-color: #379;
+	color: #fff;
+}
+
 table.overview tr:hover {
 	background-color: #379;
 	color: #fff;
@@ -195,4 +203,5 @@ table.overview .delete-purchase {
 }
 
 .header .logininfo {
+	
 }

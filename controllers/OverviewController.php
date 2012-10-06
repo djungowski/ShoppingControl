@@ -6,7 +6,7 @@ class OverviewController extends ShoppingControl_Controller_Action
 {
     public function indexAction()
     {
-        $this->view->months = ShoppingControl_Month::getAll();
+        $this->view->years = ShoppingControl_Month::getAll();
     }
     
 	public function currentmonthAction()

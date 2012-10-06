@@ -78,25 +78,50 @@ class ShoppingControl_Month extends ShoppingControl_Table_Abstract
         return new self($configArray['month']);
     }
     
-    public static function getAll()
+    private static function getYears()
     {
         $db = Zend_Registry::get('db');
         $sql = $db->select()
             ->from(
             	'purchase',
                 array(
-                    'month' => 'strftime("%Y-%m", date)'
+                    'year' => 'strftime("%Y", date)'
+                )
+            )
+            ->group('year')
+            ->order('year DESC');
+        $query = $db->query($sql);
+        $yearsFromDb = $query->fetchAll();
+        $years = array();
+        foreach ($yearsFromDb as $year) {
+            $years[$year['year']] = array();
+        }
+        return $years;
+    }
+    
+    public static function getAll()
+    {
+        $years = self::getYears();
+        
+        $db = Zend_Registry::get('db');
+        $sql = $db->select()
+            ->from(
+            	'purchase',
+                array(
+                    'month' => 'strftime("%Y-%m", date)',
+                	'year' => 'strftime("%Y", date)'
                 )
             )
             ->group('month')
             ->order('month DESC');
         $query = $db->query($sql);
-        $months = array();
         $monthsFromDb = $query->fetchAll();
+        $months = array();
         foreach($monthsFromDb as $month) {
+            $years[$month['year']][] = new self($month['month']);
             $months[] = new self($month['month']);
         }
-        return $months;
+        return $years;
     }
     
     public function exists()
