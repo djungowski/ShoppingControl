@@ -11,8 +11,8 @@
     	        <?php print($year); ?>
         </td>
     </tr>
-    <?php foreach ($months as $month): ?>
-    <tr>
+    <?php foreach ($months as $key => $month): ?>
+    <tr class="month-<?php print($month->month); ?>">
     	<td>
     		<a href="<?php print $month->getOverviewLink(); ?>">
     	        <?php print($month->__toString()); ?>
