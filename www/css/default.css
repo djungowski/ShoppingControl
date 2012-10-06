@@ -22,8 +22,16 @@ a:hover {
 	color: #fff;
 }
 
+h1 {
+	margin: 0;
+}
+
 h2 {
 	margin-top: 0;
+}
+
+h2.monthname {
+	float: left;
 }
 
 input {

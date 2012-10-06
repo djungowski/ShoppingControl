@@ -24,6 +24,7 @@ class OverviewController extends ShoppingControl_Controller_Action
 	        return;
 	    }
 	    $month = new ShoppingControl_Month($monthParam);
+	    $this->view->monthName = $month->__toString();
 	    $this->view->purchases = $month->getPurchases();
 	    $this->view->spent = number_format($month->spent(), 2);
 	}
