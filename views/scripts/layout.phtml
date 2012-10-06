@@ -19,11 +19,18 @@
 </head>
 
 <body>
-<?php if ($this->showNavigation) { ?>
-<div class="logininfo">
-    <b><?php print $this->translations->login->loggedinas; ?>:</b>
-    <?php print $this->loggedInUser; ?>
+<div class="header">
+	<span class="name">
+		ShoppingControl <?php print $this->version ?>
+	</span>
+	<?php if (!empty($this->loggedInUser)) { ?>
+    <span class="logininfo">
+        <b><?php print $this->translations->login->loggedinas; ?>:</b>
+        <?php print $this->loggedInUser; ?>
+    </span>
+    <?php } ?>
 </div>
+<?php if ($this->showNavigation) { ?>
 <div class="navigation">
     <a href="<?php print URLPATH; ?>/">
         <?php print $this->translations->navigation->new; ?>
@@ -51,7 +58,7 @@
 </div>
 <?php } ?>
 <div class="copyright">
-    Shopping Control <?php print $this->version ?> -
+    Shopping Control <?php print $this->version ?>
     &copy; 2012 Dominik Jungowski
 </div>
 </body>
