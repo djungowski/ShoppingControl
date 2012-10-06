@@ -22,13 +22,15 @@ class ShoppingControl_Month extends ShoppingControl_Table_Abstract
      * 
      * @param Integer $month
      */
-    public function __construct($month)
+    public function __construct($monthString)
     {
         parent::__construct();
-        $this->_month = $month;
-        $monthInDb = $this->find($month);
+        $this->_month = $monthString;
+        $monthInDb = $this->find($this->_month);
         if ($monthInDb !== false) {
             $this->_exists = true;
+            $monthArray = explode('-', $this->_month);
+            $this->_monthName = strftime('%b %Y', mktime(0, 0, 0, $monthArray[1], 1, $monthArray[0]));
             $this->columnsAsProperties($monthInDb);
             $this->rest = $this->getRest();
         }
@@ -36,7 +38,7 @@ class ShoppingControl_Month extends ShoppingControl_Table_Abstract
     
     public function __toString()
     {
-        return $this->_month;
+        return $this->_monthName;
     }
     
     protected function find($month)
