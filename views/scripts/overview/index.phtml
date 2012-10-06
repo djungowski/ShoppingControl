@@ -5,6 +5,7 @@
 		<th><?php print $this->translations->spent; ?></th>
 		<th><?php print $this->translations->rest; ?></th>
 	</tr>
+	<?php $i = 0; ?>
     <?php foreach ($this->years as $year => $months): ?>
     <tr>
     	<td colspan="4" class="year">
@@ -12,7 +13,7 @@
         </td>
     </tr>
     <?php foreach ($months as $key => $month): ?>
-    <tr class="month-<?php print($month->month); ?>">
+    <tr class="month-<?php print($month->month); if ($i > 0) { print(" hidden"); } ?>">
     	<td>
     		<a href="<?php print $month->getOverviewLink(); ?>">
     	        <?php print($month->__toString()); ?>
@@ -35,5 +36,6 @@
         </td>
     </tr>
     <?php endforeach; ?>
+    <?php $i++; ?>
     <?php endforeach; ?>
 </table>

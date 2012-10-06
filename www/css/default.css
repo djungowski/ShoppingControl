@@ -107,6 +107,11 @@ table.overview .year {
 	font-size: 20px;
 	background-color: #379;
 	color: #fff;
+	padding: 6px;
+}
+
+table.overview .hidden {
+	display: none;
 }
 
 table.overview tr:hover {
