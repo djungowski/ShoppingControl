@@ -17,6 +17,10 @@ a,input {
 	margin: 6px 0px;
 }
 
+a {
+	background: transparent url('../img/listArrow.png') no-repeat right 50%;
+}
+
 a:hover {
 	background-color: #ddd;
 }
@@ -90,6 +94,15 @@ div.message {
 .copyright {
 	margin-top: 2em;
 	text-align: center;
+}
+
+.copyright a {
+	padding: 0;
+	display: inline;
+	color: #369;
+	border: 0;
+	margin: 0;
+	background: none;
 }
 
 table {
@@ -202,12 +215,8 @@ table.overview .delete-purchase {
 
 .header {
 	padding: 6px;
-	background-color: #369;
 	color: white;
-	background-image: url(../img/shopping-control.png);
-	background-repeat: no-repeat;
-	background-position-x: 99.6%;
-	background-position-y: 5px;
+	background: #369 url(../img/shopping-control.png) no-repeat 99.6% 50%;
 	padding-right: 36px;
 	clear: both;
 	margin-bottom: 6px;

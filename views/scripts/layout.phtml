@@ -2,19 +2,13 @@
     "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"> 
 <head> 
-    <title>ShoppingControl <?php print $this->version ?></title>
+    <title>ShoppingControl</title>
     <link rel="icon" type="image/x-icon" href="<?php print URLPATH; ?>/img/shopping-control.ico" />
     <link rel="apple-touch-icon" type="image/x-icon" href="<?php print URLPATH; ?>/img/shopping-control.ico" />
     <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
     <meta name="viewport" content="width=320; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
     <base href="<?php print $this->basepath; ?>/" />
     <link rel="stylesheet" type="text/css" href="<?php print URLPATH; ?>/css/default.css" />
-    <!-- declared here since external stylesheet seem to ignore the base tag settings -->
-    <style type="text/css">
-        a {
-        	background: transparent url('<?php print URLPATH; ?>/img/listArrow.png') no-repeat right 50%;
-        }
-    </style>
     <script type="text/javascript" src="<?php print URLPATH; ?>/js/jquery.js"></script>
 </head>
 
@@ -58,8 +52,8 @@
 </div>
 <?php } ?>
 <div class="copyright">
-    Shopping Control <?php print $this->version ?>
-    &copy; 2012 Dominik Jungowski
+    Shopping Control - Version <?php print $this->version ?><br />
+    &copy; 2012 <a href="http://www.github.com/djungowski">Dominik Jungowski</a>
 </div>
 </body>
 </html>
