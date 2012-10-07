@@ -3,7 +3,7 @@
         options = $.extend($.fn.monthtoggle.options, options);
         
         this.each(function(key, year) {
-            $(year).on('click', $.fn.monthtoggle.clickhandler);
+            $(year).bind('click', $.fn.monthtoggle.clickhandler);
         });
     };
     

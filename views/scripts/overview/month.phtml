@@ -28,7 +28,7 @@
 		<th class="amount"><?php print $this->translations->amount; ?></th>
 	</tr>
     <?php foreach ($this->purchases as $purchase): ?>
-    <tr>
+    <tr class="purchase">
     	<td class="delete-purchase">
     		<input type="checkbox" name="purchase_id[]" value="<?php print($purchase['purchase_id']); ?>" />
     	</td>
@@ -69,6 +69,7 @@
 
 <script type="text/javascript">
 $('.edit-purchases-buttons').purchaseeditor({
-    safetyQuestion: '<?php print $this->translations->question->deletepurchase; ?>'
+    safetyQuestion: '<?php print $this->translations->question->deletepurchase; ?>',
+    purchaseClass: 'purchase'
 });
 </script>
