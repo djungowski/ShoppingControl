@@ -108,6 +108,7 @@ table.overview .year {
 	background-color: #379;
 	color: #fff;
 	padding: 6px;
+	cursor: pointer;
 }
 
 table.overview .hidden {

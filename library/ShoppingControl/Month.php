@@ -17,6 +17,14 @@ class ShoppingControl_Month extends ShoppingControl_Table_Abstract
      * @var String
      */
     protected $_month;
+    
+    /**
+     * Current year
+     * Format: YYYY
+     *
+     * @var Integer
+     */
+    private $_year;
 
     /**
      * 
@@ -30,6 +38,7 @@ class ShoppingControl_Month extends ShoppingControl_Table_Abstract
         if ($monthInDb !== false) {
             $this->_exists = true;
             $monthArray = explode('-', $this->_month);
+            $this->_year = $monthArray[0];
             $this->_monthName = strftime('%b %Y', mktime(0, 0, 0, $monthArray[1], 1, $monthArray[0]));
             $this->columnsAsProperties($monthInDb);
             $this->rest = $this->getRest();
@@ -39,6 +48,11 @@ class ShoppingControl_Month extends ShoppingControl_Table_Abstract
     public function __toString()
     {
         return $this->_monthName;
+    }
+    
+    public function getYear()
+    {
+        return $this->_year;
     }
     
     protected function find($month)
