@@ -1,3 +1,4 @@
+<script type="text/javascript" src="<?php print URLPATH; ?>/js/plugins/jquery.newshop.js?<?php print $this->cachebuster; ?>"></script>
 <?php if (isset($this->success) && $this->success == true): ?>
     <p class="message"><?php print $this->successMessage; ?></p>
 <?php endif; ?>
@@ -7,9 +8,9 @@
 <form action="<?php print $this->basepath; ?>/default/new" method="post">
     <?php print $this->translations->date; ?>
     <input type="text" name="date" value="<?php print $this->today; ?>" />
+    
     <?php print $this->translations->shop->name; ?>
-<!--    <input type="text" name="shop" value="<?php print $this->mostUsedShop; ?>" maxlength="255" />-->
-	<select name="shop">
+	<select name="shop" id="shop">
 		<optgroup label="<?php print $this->translations->shop->name; ?>">
 	    <?php foreach ($this->shops as $shop) { ?>
 		<option value="<?php print($shop->shop_id); ?>" <?php if ($shop->mostUsed) { ?>selected="selected"<?php } ?>>
@@ -21,9 +22,18 @@
 			<option value="0"><?php print($this->translations->shop->new); ?></option>
 		</optgroup>
 	</select>
+	<input type="text" name="newshop" id="newshop" value="<?php print $this->mostUsedShop; ?>" maxlength="255" />
+	
     <?php print $this->translations->amount; ?> (<?php print $this->currency; ?>)
     <input type="text" name="amount" value="0.00" />
+    
     <?php print $this->translations->comment; ?>
     <input type="text" name="comment" value="" maxlength="255" />
+    
     <input type="submit" value="<?php print $this->translations->insert; ?>" />
 </form>
+<script type="text/javascript">
+$('#shop').newshop({
+    textfieldId: 'newshop'
+});
+</script>
