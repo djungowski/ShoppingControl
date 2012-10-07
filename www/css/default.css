@@ -123,6 +123,10 @@ table.overview td {
 	border-style: none none solid none;
 }
 
+table.overview td a:hover {
+	background-color: #379;
+}
+
 table.overview th {
 	width: 25%;
 	background-color: #379;
