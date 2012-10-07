@@ -11,6 +11,8 @@
         <tr>
         	<td colspan="4" class="year <?php print($year); ?>">
         	        <?php print($year); ?>
+        	        <?php $arrow_direction = 'left'; if ($i == 0) { $arrow_direction = 'down'; }?>
+        	        <img class="<?php print $arrow_direction; ?>" src="<?php print URLPATH; ?>/img/arrow_<?php print $arrow_direction; ?>.png" />
             </td>
         </tr>
         <?php foreach ($months as $key => $month): ?>
