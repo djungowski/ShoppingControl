@@ -25,12 +25,13 @@ class DefaultController extends ShoppingControl_Controller_Action
         // Save date in format 2010-03-17
         $date = $zd->toString('yyyy-MM-dd');
         
-        $shop = $this->_getParam('shop');
+        $shop = (int)$this->_getParam('shop');
         $newshop = $this->_getParam('newshop');
         // If $newshop is not empty, a new shop shall be created
-        if (!empty($newshop)) {
+        if (!empty($newshop) && $shop === 0) {
             $newShopObj = new ShoppingControl_Shop();
             // Overwrite $shop with auto increment id
+            $newshop = stripslashes($newshop);
             $shop = $newShopObj->create($newshop);
         }
         $amount = $this->_getParam('amount');
