@@ -10,7 +10,7 @@
     $.fn.monthtoggle.clickhandler = function(event) {
         var arrow;
         
-        classes = event.target.className.split(' ');
+        classes = event.currentTarget.className.split(' ');
         $('.month-' + classes[1]).toggle();
         arrow = $(event.currentTarget).find('img');
         if (arrow.hasClass('left')) {
