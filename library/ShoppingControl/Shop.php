@@ -3,10 +3,12 @@ require_once LIBPATH . '/ShoppingControl/Table/Abstract.php';
 
 class ShoppingControl_Shop extends ShoppingControl_Table_Abstract
 {
-    public function __construct($configArray)
+    public function __construct($shopAttributes = array())
     {
         parent::__construct();
-        $this->findByConfigArray($configArray);
+        if (!empty($shopAttributes)) {
+            $this->columnsAsProperties($shopAttributes);
+        }
     }
 
     private function findByConfigArray($configArray)
@@ -27,14 +29,37 @@ class ShoppingControl_Shop extends ShoppingControl_Table_Abstract
         }
     }
 
-    private function create($configArray)
+    public function create($configArray)
     {
         $sql = 'INSERT INTO shop VALUES (NULL, ?)';
         $result = $this->_db->query($sql, $configArray['name']);
         $this->findByConfigArray($configArray);
     }
     
-    public static function getMostUsed($timeRangeDays = 30)
+    public function getAll()
+    {
+        $sql = '
+        SELECT		*
+        FROM		shop
+        ORDER BY	name ASC
+        ';
+        $db = Zend_Registry::get('db');
+        $shopsFromDb = $db->fetchAll($sql);
+        
+        // Now get the most used shop
+        $mostUsed = $this->getMostUsedShopId();
+        $shops = array();
+        foreach ($shopsFromDb as $key => $shop) {
+            $shop['mostUsed'] = false;
+            if ($shop['shop_id'] == $mostUsed) {
+                $shop['mostUsed'] = true;
+            }
+            $shops[] = new self($shop);
+        }
+        return $shops;
+    }
+    
+    private function getMostUsedShopId($timeRangeDays = 30)
     {
         $timeRangeDays = (int)$timeRangeDays;
         if ($timeRangeDays <= 0) {
@@ -54,11 +79,6 @@ class ShoppingControl_Shop extends ShoppingControl_Table_Abstract
         $sql = sprintf($sql, $timeRangeDays);
         $db = Zend_Registry::get('db');
         $result = $db->fetchRow($sql);
-        return new self(
-            array(
-                'id'         => $result['shop_id'],
-                'autocreate' => false
-            )
-        );
+        return $result['shop_id'];
     }
 }

@@ -8,7 +8,14 @@
     <?php print $this->translations->date; ?>
     <input type="text" name="date" value="<?php print $this->today; ?>" />
     <?php print $this->translations->shop; ?>
-    <input type="text" name="shop" value="<?php print $this->mostUsedShop; ?>" maxlength="255" />
+<!--    <input type="text" name="shop" value="<?php print $this->mostUsedShop; ?>" maxlength="255" />-->
+	<select name="shop">
+	<?php foreach ($this->shops as $shop) { ?>
+		<option value="<?php print($shop->shop_id); ?>" <?php if ($shop->mostUsed) { ?>selected="selected"<?php } ?>>
+		    <?php print($shop->name); ?>
+	    </option>
+	<?php } ?>
+	</select>
     <?php print $this->translations->amount; ?> (<?php print $this->currency; ?>)
     <input type="text" name="amount" value="0.00" />
     <?php print $this->translations->comment; ?>

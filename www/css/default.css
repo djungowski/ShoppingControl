@@ -9,7 +9,7 @@ a,div,p {
 	border-radius: 7px;
 }
 
-a,input {
+a,input, select {
 	padding: 6px;
 	display: block;
 	color: #369;
@@ -37,7 +37,7 @@ h2.monthname {
 	float: left;
 }
 
-input {
+input, select {
 	width: 96%;
 	color: #369;
 	font-size: 1em;

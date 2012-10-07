@@ -10,12 +10,9 @@ class DefaultController extends ShoppingControl_Controller_Action
     {
         $config = Zend_Registry::get('config');
         $this->view->today = date($config->general->dateformat);
-        $mostUsedShop = ShoppingControl_Shop::getMostUsed();
-        if (isset($mostUsedShop->name)) {
-            $this->view->mostUsedShop = $mostUsedShop->name;
-        } else {
-            $this->view->mostUsedShop = '';
-        }
+        $shop = new ShoppingControl_Shop();
+        $allShops = $shop->getAll();
+        $this->view->shops = $allShops;
     }
 
     public function newAction()
@@ -34,20 +31,20 @@ class DefaultController extends ShoppingControl_Controller_Action
         $amount = str_replace(',', '.', $amount);
         $comment = $this->_getParam('comment');
 
-        // Check if the shop already exists
-        $shop = new ShoppingControl_Shop(
-            array(
-                'name' => $shop,
-                'autocreate' => true
-            )
-        );
+//        // Check if the shop already exists
+//        $shop = new ShoppingControl_Shop(
+//            array(
+//                'name' => $shop,
+//                'autocreate' => true
+//            )
+//        );
         // Insert dataset
         $db = Zend_Registry::get('db');
         $db->insert(
             'purchase',
             array(
                 'date' => $date,
-                'shop_id' => $shop->shop_id,
+                'shop_id' => $shop,
                 'amount' => $amount,
                 'comment' => $comment
             )
