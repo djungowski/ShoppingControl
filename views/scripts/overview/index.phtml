@@ -24,17 +24,17 @@
                 </td>
             	<td>
             		<a href="<?php print $month->getOverviewLink(); ?>">
-            		    <?php print($month->limit . ' ' . $this->currency); ?>
+            		    <?php print($month->limit  . $this->currency); ?>
         	    	</a>
         	    </td>
             	<td class="amount">
             		<a href="<?php print $month->getOverviewLink(); ?>">
-            	        <?php print($month->spent() . ' ' . $this->currency) ?>
+            	        <?php print($month->spent() . $this->currency) ?>
         	        </a>
                 </td>
             	<td class="amount">
             		<a href="<?php print $month->getOverviewLink(); ?>">
-            	        <?php print($month->getRest() . ' ' . $this->currency); ?>
+            	        <?php print($month->getRest() .  $this->currency); ?>
         	        </a>
                 </td>
             </tr>

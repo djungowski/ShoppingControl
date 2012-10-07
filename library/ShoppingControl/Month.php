@@ -39,7 +39,7 @@ class ShoppingControl_Month extends ShoppingControl_Table_Abstract
             $this->_exists = true;
             $monthArray = explode('-', $this->_month);
             $this->_year = $monthArray[0];
-            $this->_monthName = strftime('%b %Y', mktime(0, 0, 0, $monthArray[1], 1, $monthArray[0]));
+            $this->_monthName = strftime('%b', mktime(0, 0, 0, $monthArray[1], 1, $monthArray[0]));
             $this->columnsAsProperties($monthInDb);
             $this->rest = $this->getRest();
         }
