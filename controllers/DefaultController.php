@@ -26,18 +26,17 @@ class DefaultController extends ShoppingControl_Controller_Action
         $date = $zd->toString('yyyy-MM-dd');
         
         $shop = $this->_getParam('shop');
+        $newshop = $this->_getParam('newshop');
+        // If $newshop is not empty, a new shop shall be created
+        if (!empty($newshop)) {
+            $newShopObj = new ShoppingControl_Shop();
+            // Overwrite $shop with auto increment id
+            $shop = $newShopObj->create($newshop);
+        }
         $amount = $this->_getParam('amount');
         // Replace commas in price with dots
         $amount = str_replace(',', '.', $amount);
         $comment = $this->_getParam('comment');
-
-//        // Check if the shop already exists
-//        $shop = new ShoppingControl_Shop(
-//            array(
-//                'name' => $shop,
-//                'autocreate' => true
-//            )
-//        );
         // Insert dataset
         $db = Zend_Registry::get('db');
         $db->insert(

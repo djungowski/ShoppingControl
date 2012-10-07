@@ -29,11 +29,13 @@ class ShoppingControl_Shop extends ShoppingControl_Table_Abstract
         }
     }
 
-    public function create($configArray)
+    public function create($name)
     {
         $sql = 'INSERT INTO shop VALUES (NULL, ?)';
-        $result = $this->_db->query($sql, $configArray['name']);
-        $this->findByConfigArray($configArray);
+        $result = $this->_db->query($sql, $name);
+        $this->shop_id = $this->_db->lastInsertId();
+        $this->name = $name;
+        return $this->shop_id;
     }
     
     public function getAll()
