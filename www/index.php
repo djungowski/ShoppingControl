@@ -9,7 +9,7 @@ $config = new Zend_Config_Ini(BASEPATH . '/config/config.ini');
 // Register Config with registry
 Zend_Registry::set('config', $config);
 // Set timezone according to config
-date_default_timezone_set($config->general->timezone);
+date_default_timezone_set($config->system->timezone);
 // Start session
 Zend_Session::start(
     array(
@@ -19,6 +19,8 @@ Zend_Session::start(
 $session = new Zend_Session_Namespace($config->session->namespace);
 // Load Language files according to config
 $translations = new Zend_Config_Ini(BASEPATH . '/language/' . $config->general->language .'.ini', 'translations');
+// set locale
+setlocale(LC_ALL, $config->system->locale);
 // Register translations with registry
 Zend_Registry::set('translations', $translations);
 // Create database connection with SQLite DB
