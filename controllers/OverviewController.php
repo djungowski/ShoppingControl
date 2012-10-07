@@ -12,6 +12,7 @@ class OverviewController extends ShoppingControl_Controller_Action
 	public function currentmonthAction()
 	{
 	    $month = new ShoppingControl_Month(date('Y-m'));
+	    $this->view->monthName = $month->__toString();
         $this->view->purchases = $month->getPurchases();
         $this->view->spent = number_format($month->spent(), 2);
 	}

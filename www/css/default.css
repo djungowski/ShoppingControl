@@ -72,7 +72,16 @@ div.message {
 	margin-bottom: 0.5em;
 }
 
-.month-rest {
+/** Rest is negative */
+.month-rest-0 {
+	background-color: #D81919;
+	color: #fff;
+	padding: 0.2em;
+	margin: 0.3em 0;
+}
+
+/** Rest is positive */
+.month-rest-1 {
 	background-color: #2CE314;
 	padding: 0.2em;
 	margin: 0.3em 0;
