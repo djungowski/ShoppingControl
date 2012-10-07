@@ -49,6 +49,10 @@ input[type="submit"] {
 	width: 99.7%;
 }
 
+select optgroup {
+	border: 1px solid #369;
+}
+
 .floating-correction {
 	clear: both;
 }

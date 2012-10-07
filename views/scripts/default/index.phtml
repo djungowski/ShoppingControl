@@ -7,14 +7,19 @@
 <form action="<?php print $this->basepath; ?>/default/new" method="post">
     <?php print $this->translations->date; ?>
     <input type="text" name="date" value="<?php print $this->today; ?>" />
-    <?php print $this->translations->shop; ?>
+    <?php print $this->translations->shop->name; ?>
 <!--    <input type="text" name="shop" value="<?php print $this->mostUsedShop; ?>" maxlength="255" />-->
 	<select name="shop">
-	<?php foreach ($this->shops as $shop) { ?>
+		<optgroup label="<?php print $this->translations->shop->name; ?>">
+	    <?php foreach ($this->shops as $shop) { ?>
 		<option value="<?php print($shop->shop_id); ?>" <?php if ($shop->mostUsed) { ?>selected="selected"<?php } ?>>
 		    <?php print($shop->name); ?>
 	    </option>
-	<?php } ?>
+	    <?php } ?>
+	    </optgroup>
+	    <optgroup label="<?php print $this->translations->options; ?>">
+			<option value="0"><?php print($this->translations->shop->new); ?></option>
+		</optgroup>
 	</select>
     <?php print $this->translations->amount; ?> (<?php print $this->currency; ?>)
     <input type="text" name="amount" value="0.00" />
