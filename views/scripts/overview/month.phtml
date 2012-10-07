@@ -1,7 +1,7 @@
 <h2 class="monthname">
 	<?php print($this->monthName); ?>
 </h2>
-<script type="text/javascript" src="<?php print URLPATH; ?>/js/plugins/jquery.purchaseeditor.js"></script>
+<script type="text/javascript" src="<?php print URLPATH; ?>/js/plugins/jquery.purchaseeditor.js?<?php print $this->cachebuster; ?>"></script>
 <div class="edit-purchases-buttons">
     <a href="#" class="edit-purchases edit">
     	<?php print $this->translations->edit; ?>

@@ -15,6 +15,7 @@ class ShoppingControl_Controller_Action extends Zend_Controller_Action
         $this->view->showNavigation = true;
         $session = new Zend_Session_Namespace($config->session->namespace);
         $this->view->loggedInUser = $session->realname;
+        $this->view->cachebuster = md5(SHOPPINGCONTROL_VERSION);
     }
     
     public function postDispatch()
