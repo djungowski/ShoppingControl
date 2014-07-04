@@ -179,7 +179,7 @@ table.overview td {
 table.overview a {
 	border-width: 0px;
 	text-decoration: none;
-	background-image: none;
+	background: none;
 }
 
 table.overview tr:hover a {
