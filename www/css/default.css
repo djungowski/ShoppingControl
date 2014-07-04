@@ -9,16 +9,17 @@ a,input, select {
 	padding: 6px;
 	display: block;
 	color: #369;
-	border: 1px solid #369;
+	border: 1px solid #a9a9a9;
 	margin: 6px 0px;
 }
 
 a {
-	background: transparent url('../img/listArrow.png') no-repeat right 50%;
+	background: rgba(255, 255, 255, 0.8) url('../img/listArrow.png') no-repeat right 50%;
+	border: 1px solid #eee;
 }
 
 a:hover {
-	background-color: #ddd;
+	background-color: rgba(255, 255, 255, 0.95);
 }
 
 h1 {
@@ -54,8 +55,8 @@ input[type="submit"] {
 }
 
 .content {
-	background-color: #ddd;
-	border: 1px solid #369;
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid #eee;
 	padding: 0.5em;
 	clear: both;
 }
