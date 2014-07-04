@@ -48,6 +48,8 @@ input[type="submit"] {
 	background: #998D37 url(../img/icon-add.png) no-repeat left center;
 	color: #EAF067;
 	width: 100%;
+	margin-top: 30px;
+	height: 40px;
 }
 
 .content-wrapper {
@@ -97,7 +99,7 @@ div.message {
 }
 
 .copyright {
-	margin-top: 2em;
+	margin-top: 1em;
 	text-align: center;
 	color: #fff;
 	font-size: 14px;
