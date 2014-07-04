@@ -45,15 +45,15 @@ select {
 }
 
 input[type="submit"] {
-	background: #998D37;
-	color: #EAF067;
+	background: #0076EC;
+	color: #CFF7FF;
 	width: 100%;
 	margin-top: 30px;
 	height: 40px;
 }
 
 input.new-entry {
-	background: #998D37 url(../img/icon-add.png) no-repeat left center;
+	background: #0076EC url(../img/icon-add.png) no-repeat 5px center;
 }
 
 .content-wrapper {
@@ -230,7 +230,7 @@ table.overview .delete-purchase {
 .header {
 	padding: 6px 13px 6px 45px;
 	color: white;
-	background: #369 url(../img/shopping-control.png) no-repeat 5px 50%;
+	background: #0076EC url(../img/shopping-control.png) no-repeat 5px 50%;
 	clear: both;
 	margin-bottom: 6px;
 	position: relative;
@@ -265,7 +265,7 @@ table.overview .delete-purchase {
 	width: 100%;
 	right: 0;
 	top: 100%;
-	background-color: #369;
+	background-color: #0076EC;
 	border-top: 5px solid #2BB0C2;
 }
 
