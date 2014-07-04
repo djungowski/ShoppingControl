@@ -15,6 +15,8 @@
 <body>
 <div class="content-wrapper">
     <div class="header">
+        <img class="navigation-trigger active" src="img/list.png"></span>
+        <img class="navigation-trigger" src="img/list-active.png"></span>
         <h1 class="name">
             ShoppingControl <?php print $this->version ?>
         </h1>
@@ -33,14 +35,6 @@
         <a href="<?php print URLPATH; ?>/overview/currentmonth">
             <?php print $this->translations->navigation->current; ?>
         </a>
-    </div>
-    <?php } ?>
-
-    <div class="content">
-        <?php print $this->layout()->content; ?>
-    </div>
-    <?php if ($this->showNavigation) { ?>
-    <div class="navigation">
         <a href="<?php print URLPATH; ?>/overview">
             <?php print $this->translations->navigation->overview; ?>
         </a>
@@ -67,5 +61,12 @@
         Background: &copy; <a href="https://www.flickr.com/photos/naomiyaki/4583474627/">Naomi Rubin</a>
     </div>
 </div>
+
+<script type="text/javascript">
+    $('.navigation-trigger').click(function() {
+        $('.navigation').toggle();
+        $('.navigation-trigger').toggleClass('active');
+    });
+</script>
 </body>
 </html>

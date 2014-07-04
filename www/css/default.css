@@ -216,10 +216,9 @@ table.overview .delete-purchase {
 }
 
 .header {
-	padding: 6px;
+	padding: 6px 13px 6px 45px;
 	color: white;
-	background: #369 url(../img/shopping-control.png) no-repeat 99.6% 50%;
-	padding-right: 36px;
+	background: #369 url(../img/shopping-control.png) no-repeat 5px 50%;
 	clear: both;
 	margin-bottom: 6px;
 }
@@ -235,6 +234,22 @@ table.overview .delete-purchase {
 	
 }
 
+.header .navigation-trigger {
+	float: right;
+	position: relative;
+	top: 8px;
+	cursor: pointer;
+	display: none
+}
+
+.header .navigation-trigger.active {
+	display: inline;
+}
+
 #newshop {
+	display: none;
+}
+
+.navigation {
 	display: none;
 }
