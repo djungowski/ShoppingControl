@@ -1,5 +1,5 @@
 body {
-	background-color: #eee;
+	background: #c79854 url(../img/pattern-wood.jpg);
 	color: #369;
 	font-family: helvetica, verdana, sans-serif;
 	font-size: 1em;
@@ -99,12 +99,14 @@ div.message {
 .copyright {
 	margin-top: 2em;
 	text-align: center;
+	color: #fff;
+	font-size: 14px;
 }
 
 .copyright a {
 	padding: 0;
 	display: inline;
-	color: #369;
+	color: #fff;
 	border: 0;
 	margin: 0;
 	background: none;
