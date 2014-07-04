@@ -26,26 +26,27 @@
             <?php print $this->loggedInUser; ?>
         </span>
         <?php } ?>
+
+        <?php if ($this->showNavigation) { ?>
+            <div class="navigation">
+                <a href="<?php print URLPATH; ?>/">
+                    <?php print $this->translations->navigation->new; ?>
+                </a>
+                <a href="<?php print URLPATH; ?>/overview/currentmonth">
+                    <?php print $this->translations->navigation->current; ?>
+                </a>
+                <a href="<?php print URLPATH; ?>/overview">
+                    <?php print $this->translations->navigation->overview; ?>
+                </a>
+                <a href="<?php print URLPATH; ?>/admin">
+                    <?php print $this->translations->navigation->admin; ?>
+                </a>
+                <a href="<?php print URLPATH; ?>/logout">
+                    <?php print $this->translations->logout->logout; ?>
+                </a>
+            </div>
+        <?php } ?>
     </div>
-    <?php if ($this->showNavigation) { ?>
-    <div class="navigation">
-        <a href="<?php print URLPATH; ?>/">
-            <?php print $this->translations->navigation->new; ?>
-        </a>
-        <a href="<?php print URLPATH; ?>/overview/currentmonth">
-            <?php print $this->translations->navigation->current; ?>
-        </a>
-        <a href="<?php print URLPATH; ?>/overview">
-            <?php print $this->translations->navigation->overview; ?>
-        </a>
-        <a href="<?php print URLPATH; ?>/admin">
-            <?php print $this->translations->navigation->admin; ?>
-        </a>
-        <a href="<?php print URLPATH; ?>/logout">
-            <?php print $this->translations->logout->logout; ?>
-        </a>
-    </div>
-    <?php } ?>
 
     <div class="content">
         <?php print $this->layout()->content; ?>

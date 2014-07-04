@@ -221,6 +221,7 @@ table.overview .delete-purchase {
 	background: #369 url(../img/shopping-control.png) no-repeat 5px 50%;
 	clear: both;
 	margin-bottom: 6px;
+	position: relative;
 }
 
 .header .name {
@@ -250,6 +251,25 @@ table.overview .delete-purchase {
 	display: none;
 }
 
-.navigation {
+.header .navigation {
 	display: none;
+	position: absolute;
+	width: 100%;
+	right: 0;
+	top: 100%;
+	background-color: #369;
+	border-top: 5px solid #2BB0C2;
+}
+
+.header .navigation a {
+	background-color: transparent;
+	background-image: url(../img/listArrow-inverse.png);
+	text-decoration: none;
+	color: #fff;
+	border-style: none none solid none;
+	border-color: #2BB0C2;
+}
+
+.header .navigation a:last-child {
+	border: none;
 }
