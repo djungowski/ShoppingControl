@@ -93,7 +93,8 @@ div.message {
 
 /** Rest is positive */
 .month-rest-1 {
-	background-color: #2CE314;
+	background-color: #2ABB16;
+	color: #339;
 	padding: 0.2em;
 	margin: 0.3em 0;
 }
