@@ -35,14 +35,18 @@ h2.monthname {
 }
 
 input, select {
-	width: 96%;
+	width: calc(100% - 14px);
 	color: #369;
 	font-size: 1em;
 }
 
+select {
+	width: 100%;
+}
+
 input[type="submit"] {
 	background-color: #fff;
-	width: 99.7%;
+	width: 100%;
 }
 
 .content-wrapper {
