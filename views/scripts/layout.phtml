@@ -18,13 +18,15 @@
         <img class="navigation-trigger active" src="img/list.png"></span>
         <img class="navigation-trigger" src="img/list-active.png"></span>
         <h1 class="name">
-            ShoppingControl <?php print $this->version ?>
+            <a href="<?php print URLPATH; ?>/">
+                ShoppingControl <?php print $this->version ?>
+            </a>
         </h1>
         <?php if (!empty($this->loggedInUser)) { ?>
-        <span class="logininfo">
+        <a href="<?php print URLPATH; ?>/" class="logininfo">
             <b><?php print $this->translations->login->loggedinas; ?>:</b>
             <?php print $this->loggedInUser; ?>
-        </span>
+        </a>
         <?php } ?>
 
         <?php if ($this->showNavigation) { ?>
