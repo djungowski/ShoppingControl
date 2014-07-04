@@ -15,8 +15,10 @@
 <body>
 <div class="content-wrapper">
     <div class="header">
-        <img class="navigation-trigger active" src="img/list.png"></span>
-        <img class="navigation-trigger" src="img/list-active.png"></span>
+        <?php if ($this->showNavigation) { ?>
+            <img class="navigation-trigger active" src="img/list.png" alt="<?php print $this->translations->navigation->title; ?>" />
+            <img class="navigation-trigger" src="img/list-active.png" alt="<?php print $this->translations->navigation->title; ?>" />
+        <?php } ?>
         <h1 class="name">
             <a href="<?php print URLPATH; ?>/">
                 ShoppingControl <?php print $this->version ?>
