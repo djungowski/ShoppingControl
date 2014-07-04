@@ -52,9 +52,19 @@
         </a>
     </div>
     <?php } ?>
+
+    <div class="content">
+        <?php print $this->layout()->content; ?>
+    </div>
+    <?php if ($this->showNavigation) { ?>
+    <div class="navigation">
+
+    </div>
+    <?php } ?>
     <div class="copyright">
         Shopping Control - Version <?php print $this->version ?><br />
-        &copy; 2012 <a href="http://www.github.com/djungowski">Dominik Jungowski</a>
+        &copy; 2014 <a href="http://www.github.com/djungowski">Dominik Jungowski</a><br />
+        Background: &copy; <a href="https://www.flickr.com/photos/naomiyaki/4583474627/">Naomi Rubin</a>
     </div>
 </div>
 </body>
