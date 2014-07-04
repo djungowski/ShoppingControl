@@ -13,47 +13,49 @@
 </head>
 
 <body>
-<div class="header">
-	<h1 class="name">
-		ShoppingControl <?php print $this->version ?>
-	</h1>
-	<?php if (!empty($this->loggedInUser)) { ?>
-    <span class="logininfo">
-        <b><?php print $this->translations->login->loggedinas; ?>:</b>
-        <?php print $this->loggedInUser; ?>
-    </span>
+<div class="content-wrapper">
+    <div class="header">
+        <h1 class="name">
+            ShoppingControl <?php print $this->version ?>
+        </h1>
+        <?php if (!empty($this->loggedInUser)) { ?>
+        <span class="logininfo">
+            <b><?php print $this->translations->login->loggedinas; ?>:</b>
+            <?php print $this->loggedInUser; ?>
+        </span>
+        <?php } ?>
+    </div>
+    <?php if ($this->showNavigation) { ?>
+    <div class="navigation">
+        <a href="<?php print URLPATH; ?>/">
+            <?php print $this->translations->navigation->new; ?>
+        </a>
+        <a href="<?php print URLPATH; ?>/overview/currentmonth">
+            <?php print $this->translations->navigation->current; ?>
+        </a>
+    </div>
     <?php } ?>
-</div>
-<?php if ($this->showNavigation) { ?>
-<div class="navigation">
-    <a href="<?php print URLPATH; ?>/">
-        <?php print $this->translations->navigation->new; ?>
-    </a>
-    <a href="<?php print URLPATH; ?>/overview/currentmonth">
-        <?php print $this->translations->navigation->current; ?>
-    </a>
-</div>
-<?php } ?>
 
-<div class="content">
-    <?php print $this->layout()->content; ?>
-</div>
-<?php if ($this->showNavigation) { ?>
-<div class="navigation">
-    <a href="<?php print URLPATH; ?>/overview">
-        <?php print $this->translations->navigation->overview; ?>
-    </a>
-    <a href="<?php print URLPATH; ?>/admin">
-        <?php print $this->translations->navigation->admin; ?>
-    </a>
-    <a href="<?php print URLPATH; ?>/logout">
-    	<?php print $this->translations->logout->logout; ?>
-    </a>
-</div>
-<?php } ?>
-<div class="copyright">
-    Shopping Control - Version <?php print $this->version ?><br />
-    &copy; 2012 <a href="http://www.github.com/djungowski">Dominik Jungowski</a>
+    <div class="content">
+        <?php print $this->layout()->content; ?>
+    </div>
+    <?php if ($this->showNavigation) { ?>
+    <div class="navigation">
+        <a href="<?php print URLPATH; ?>/overview">
+            <?php print $this->translations->navigation->overview; ?>
+        </a>
+        <a href="<?php print URLPATH; ?>/admin">
+            <?php print $this->translations->navigation->admin; ?>
+        </a>
+        <a href="<?php print URLPATH; ?>/logout">
+            <?php print $this->translations->logout->logout; ?>
+        </a>
+    </div>
+    <?php } ?>
+    <div class="copyright">
+        Shopping Control - Version <?php print $this->version ?><br />
+        &copy; 2012 <a href="http://www.github.com/djungowski">Dominik Jungowski</a>
+    </div>
 </div>
 </body>
 </html>

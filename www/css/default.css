@@ -49,6 +49,11 @@ input[type="submit"] {
 	width: 99.7%;
 }
 
+.content-wrapper {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
 .floating-correction {
 	clear: both;
 }
