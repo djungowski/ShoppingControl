@@ -30,19 +30,24 @@
         <?php if ($this->showNavigation) { ?>
             <div class="navigation">
                 <a href="<?php print URLPATH; ?>/">
-                    <?php print $this->translations->navigation->new; ?>
+                    <img src="img/icon-add.png" width="30" height="30" alt="" />
+                    <span><?php print $this->translations->navigation->new; ?></span>
                 </a>
                 <a href="<?php print URLPATH; ?>/overview/currentmonth">
-                    <?php print $this->translations->navigation->current; ?>
+                    <img src="img/icon-calendar.png" width="30" height="30" alt="" />
+                    <span><?php print $this->translations->navigation->current; ?></span>
                 </a>
                 <a href="<?php print URLPATH; ?>/overview">
-                    <?php print $this->translations->navigation->overview; ?>
+                    <img src="img/icon-books.png" width="30" height="30" alt="" />
+                    <span><?php print $this->translations->navigation->overview; ?></span>
                 </a>
                 <a href="<?php print URLPATH; ?>/admin">
-                    <?php print $this->translations->navigation->admin; ?>
+                    <img src="img/icon-preferences.png" width="30" height="30" alt="" />
+                    <span><?php print $this->translations->navigation->admin; ?></span>
                 </a>
                 <a href="<?php print URLPATH; ?>/logout">
-                    <?php print $this->translations->logout->logout; ?>
+                    <img src="img/icon-padlock.png" width="30" height="30" alt="" />
+                    <span><?php print $this->translations->logout->logout; ?></span>
                 </a>
             </div>
         <?php } ?>

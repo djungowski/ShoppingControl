@@ -45,9 +45,8 @@ select {
 }
 
 input[type="submit"] {
-	background: #998D37 url(../img/add.png) no-repeat left center;
+	background: #998D37 url(../img/icon-add.png) no-repeat left center;
 	color: #EAF067;
-	background-size: auto 100%;
 	width: 100%;
 }
 
@@ -278,4 +277,10 @@ table.overview .delete-purchase {
 
 .header .navigation a:last-child {
 	border: none;
+}
+
+.header .navigation span {
+	position: relative;
+	top: -9px;
+	left: 6px;
 }
