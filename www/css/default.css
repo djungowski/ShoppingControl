@@ -44,6 +44,10 @@ select {
 	width: 100%;
 }
 
+input[type="checkbox"] {
+	width: 100%;
+}
+
 input[type="submit"] {
 	background: #0076EC;
 	color: #CFF7FF;
