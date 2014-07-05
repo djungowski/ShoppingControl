@@ -34,4 +34,8 @@
 $('#shop').newshop({
     textfieldId: 'newshop'
 });
+
+$('input[name="date"]').datepicker({
+    dateFormat: '<?php print $this->dateformat; ?>'
+});
 </script>

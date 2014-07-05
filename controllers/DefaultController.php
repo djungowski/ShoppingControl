@@ -10,6 +10,7 @@ class DefaultController extends ShoppingControl_Controller_Action
     {
         $config = Zend_Registry::get('config');
         $this->view->today = date($config->general->dateformat);
+        $this->view->dateformat = $config->general->dateformat;
         $shop = new ShoppingControl_Shop();
         $allShops = $shop->getAll();
         $this->view->shops = $allShops;
