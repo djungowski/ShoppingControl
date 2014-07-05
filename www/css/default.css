@@ -74,6 +74,7 @@ input.new-entry {
 	border: 1px solid #eee;
 	padding: 0.5em;
 	clear: both;
+	margin-bottom: 6px;
 }
 
 .message {
@@ -108,7 +109,6 @@ div.message {
 }
 
 .copyright {
-	margin-top: 1em;
 	text-align: center;
 	color: #fff;
 	font-size: 14px;

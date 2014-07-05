@@ -56,6 +56,11 @@
         <?php } ?>
     </div>
 
+    <?php print(isset($this->month)); ?>
+    <div class="content">
+        <?php require_once BASEPATH . '/views/month-rest.phtml'; ?>
+    </div>
+
     <div class="content">
         <?php print $this->layout()->content; ?>
     </div>

@@ -14,7 +14,7 @@
 </div>
 <?php else:?>
 <p class="month-rest-<?php print((int)($this->monthRest > 0)); ?>">
-	<b><?php print $this->translations->month->rest; ?>:</b>
+	<b><?php print $this->translations->month->rest . ' ' . $this->month ?>:</b>
 	<?php print $this->monthRest; ?>
 	<?php print $this->currency; ?>
 </p>

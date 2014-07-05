@@ -3,8 +3,6 @@
     <p class="message"><?php print $this->successMessage; ?></p>
 <?php endif; ?>
 
-<?php require_once BASEPATH . '/views/month-rest.phtml'; ?>
-
 <form action="<?php print $this->basepath; ?>/default/new" method="post">
     <?php print $this->translations->date; ?>
     <input type="text" name="date" value="<?php print $this->today; ?>" />
