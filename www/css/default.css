@@ -1,28 +1,25 @@
 body {
-	background-color: #eee;
+	background: #c79854 url(../img/pattern-wood.jpg);
 	color: #369;
 	font-family: helvetica, verdana, sans-serif;
 	font-size: 1em;
-}
-
-a,div,p {
-	border-radius: 7px;
 }
 
 a,input, select {
 	padding: 6px;
 	display: block;
 	color: #369;
-	border: 1px solid #369;
+	border: 1px solid #a9a9a9;
 	margin: 6px 0px;
 }
 
 a {
-	background: transparent url('../img/listArrow.png') no-repeat right 50%;
+	background: rgba(255, 255, 255, 0.8) url('../img/listArrow.png') no-repeat right 50%;
+	border: 1px solid #eee;
 }
 
 a:hover {
-	background-color: #ddd;
+	background-color: rgba(255, 255, 255, 0.95);
 }
 
 h1 {
@@ -38,15 +35,34 @@ h2.monthname {
 }
 
 input, select {
-	width: 96%;
+	width: calc(100% - 14px);
 	color: #369;
 	font-size: 1em;
-	border-radius: 7px;
+}
+
+select {
+	width: 100%;
+}
+
+input[type="checkbox"] {
+	width: 100%;
 }
 
 input[type="submit"] {
-	background-color: #fff;
-	width: 99.7%;
+	background: #0076EC;
+	color: #CFF7FF;
+	width: 100%;
+	margin-top: 30px;
+	height: 40px;
+}
+
+input.new-entry {
+	background: #0076EC url(../img/icon-add.png) no-repeat 5px center;
+}
+
+.content-wrapper {
+	max-width: 800px;
+	margin: 0 auto;
 }
 
 .floating-correction {
@@ -54,10 +70,9 @@ input[type="submit"] {
 }
 
 .content {
-	background-color: #ddd;
-	border: 1px solid #369;
+	background-color: rgba(255, 255, 255, 0.8);
+	border: 1px solid #eee;
 	padding: 0.5em;
-	border-radius: 7px;
 	clear: both;
 }
 
@@ -86,20 +101,23 @@ div.message {
 
 /** Rest is positive */
 .month-rest-1 {
-	background-color: #2CE314;
+	background-color: #2ABB16;
+	color: #339;
 	padding: 0.2em;
 	margin: 0.3em 0;
 }
 
 .copyright {
-	margin-top: 2em;
+	margin-top: 1em;
 	text-align: center;
+	color: #fff;
+	font-size: 14px;
 }
 
 .copyright a {
 	padding: 0;
 	display: inline;
-	color: #369;
+	color: #fff;
 	border: 0;
 	margin: 0;
 	background: none;
@@ -126,7 +144,7 @@ table.overview .year {
 	text-align: center;
 	font-weight: bold;
 	font-size: 20px;
-	background-color: #379;
+	background-color: #0076EC;
 	color: #fff;
 	padding: 6px;
 	cursor: pointer;
@@ -137,7 +155,7 @@ table.overview .hidden {
 }
 
 table.overview tr:hover {
-	background-color: #379;
+	background-color: #0076EC;
 	color: #fff;
 }
 
@@ -146,12 +164,12 @@ table.overview td {
 }
 
 table.overview td a:hover {
-	background-color: #379;
+	background-color: #0076EC;
 }
 
 table.overview th {
 	width: 25%;
-	background-color: #379;
+	background-color: #0076EC;
 	border-bottom: 1px solid #ddd;
 	color: #fff;
 	font-weight: bold;
@@ -165,39 +183,78 @@ table.overview td {
 table.overview a {
 	border-width: 0px;
 	text-decoration: none;
-	background-image: none;
+	background: none;
+}
+
+table.overview tr {
+	height: 40px;
 }
 
 table.overview tr:hover a {
 	color: #fff;
 }
 
-table.overview .amount {
-	text-align: right;
-	vertical-align: top;
-}
-
 table.overview .total {
 	border-top: 1px solid #fff;
-	background-color: #379;
+	background-color: #0076EC;
 	color: #fff;
 	font-weight: bold;
 }
 
+table.overview .date {
+	width: 15%;
+	font-weight: bold;
+}
+
+table.overview .shop {
+	width: 62%;
+}
+
+table.overview .shop .down {
+	display: none;
+}
+
+table.overview .shop .comment {
+	margin: 1em 0 0;
+	display: none;
+}
+
+table.overview .amount {
+	text-align: right;
+	width: 15%;
+}
+
+table.overview .comment-open .date, table.overview .comment-open .amount {
+	vertical-align: top;
+}
+
 table.overview .delete-purchase {
 	display: none;
-	width: 4%;
+	width: 8%;
 	padding-left: 6px;
 }
 
 .edit-purchases {
 	border: 1px solid #aaa;
-	padding: 6px;
-	width: 150px;
-	text-align: center;
+	padding: 6px 40px 6px 13px;
+	width: 110px;
 	text-decoration: none;
 	font-weight: bold;
 	color: #369;
+	background-repeat: no-repeat;
+	background-position: calc(100% - 5px) center;
+}
+
+.edit-purchases.edit {
+	background-image: url(../img/icon-pencil.png);
+}
+
+.edit-purchases.delete {
+	background-image: url(../img/icon-delete.png);
+}
+
+.edit-purchases.cancel {
+	background-image: url(../img/icon-cancel.png);
 }
 
 .edit-purchases-buttons {
@@ -209,17 +266,17 @@ table.overview .delete-purchase {
 }
 
 .edit-purchases:active {
-	background-color: #369;
+	background-color: #0076EC;
 	color: #fff;
 }
 
 .header {
-	padding: 6px;
+	padding: 6px 13px 6px 45px;
 	color: white;
-	background: #369 url(../img/shopping-control.png) no-repeat 99.6% 50%;
-	padding-right: 36px;
+	background: #0076EC url(../img/shopping-control.png) no-repeat 5px 50%;
 	clear: both;
 	margin-bottom: 6px;
+	position: relative;
 }
 
 .header .name {
@@ -229,10 +286,57 @@ table.overview .delete-purchase {
 	display: block;
 }
 
-.header .logininfo {
-	
+.header .navigation-trigger {
+	float: right;
+	position: relative;
+	top: 8px;
+	cursor: pointer;
+	display: none
+}
+
+.header .navigation-trigger.active {
+	display: inline;
 }
 
 #newshop {
 	display: none;
+}
+
+.header .navigation {
+	display: none;
+	position: absolute;
+	width: 100%;
+	right: 0;
+	top: 100%;
+	background-color: #0076EC;
+	border-top: 5px solid #2BB0C2;
+}
+
+.header .navigation a {
+	background-color: transparent;
+	background-image: url(../img/listArrow-inverse.png);
+	text-decoration: none;
+	color: #fff;
+	border-style: none none solid none;
+	border-color: #2BB0C2;
+}
+
+.header .navigation a:last-child {
+	border: none;
+}
+
+.header .navigation span {
+	position: relative;
+	top: -9px;
+	left: 6px;
+}
+
+.header h1 a, .header .logininfo {
+	display: inline;
+	background: none;
+	border: none;
+	color: #fff;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
 }

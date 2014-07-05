@@ -2,3 +2,5 @@
 .externalToolBuilders
 .project
 .settings
+.idea
+db/sc.db

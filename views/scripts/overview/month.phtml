@@ -20,11 +20,12 @@
 <table class="overview" cellspacing="0">
 	<tr>
 		<th class="delete-purchase">&nbsp;</th>
-		<th>
-		    <?php print $this->translations->date; ?>,
-		    <?php print $this->translations->shop->name; ?>,
-		    <?php print $this->translations->comment; ?>
-	    </th>
+		<th class="date">
+		    <?php print $this->translations->date; ?>
+        </th>
+        <th class="shop">
+		    <?php print $this->translations->shop->name; ?>
+        </th>
 		<th class="amount"><?php print $this->translations->amount; ?></th>
 	</tr>
     <?php foreach ($this->purchases as $purchase): ?>
@@ -32,15 +33,18 @@
     	<td class="delete-purchase">
     		<input type="checkbox" name="purchase_id[]" value="<?php print($purchase['purchase_id']); ?>" />
     	</td>
-    	<td>
+    	<td class="date">
     	    <?php print($purchase['date']); ?>
-    	    <br />
+        </td>
+        <td class="shop">
     	    <?php print($purchase['name']); ?>
     	    <?php if (!empty($purchase['comment'])): ?>
-    	    <br /><br />
-    	    <strong><?php print $this->translations->comment; ?>:</strong>
-    	    <br />
-    	    <?php print($purchase['comment']); ?>
+            <img class="comment-toggle" src="<?php print URLPATH; ?>/img/icon-info.png" />
+            <p class="comment">
+                <strong><?php print $this->translations->comment; ?>:</strong>
+                <br />
+                <?php print($purchase['comment']); ?>
+            </p>
     	    <?php endif; ?>
 	    </td>
     	<td class="amount"><?php print($purchase['amount'] . ' ' . $this->currency); ?></td>
@@ -48,7 +52,7 @@
     <?php endforeach; ?>
     <tr>
     	<td class="delete-purchase total">&nbsp;</td>
-    	<td class="total"><?php print($this->translations->spent); ?></td>
+    	<td class="total" colspan="2"><?php print($this->translations->spent); ?></td>
     	<td class="amount total"><?php print($this->spent . ' ' . $this->currency); ?></td>
     </tr>
 </table>
@@ -72,4 +76,16 @@ $('.edit-purchases-buttons').purchaseeditor({
     safetyQuestion: '<?php print $this->translations->question->deletepurchase; ?>',
     purchaseClass: 'purchase'
 });
+
+$('tr').click(function() {
+    if ($('.edit-purchases.delete').is(':visible')) {
+        return;
+    }
+    var tr = $(this);
+    var comment = tr.find('.comment');
+    if (comment.length > 0) {
+        comment.slideToggle(200);
+        tr.toggleClass('comment-open');
+    }
+})
 </script>

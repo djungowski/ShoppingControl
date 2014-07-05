@@ -13,47 +13,65 @@
 </head>
 
 <body>
-<div class="header">
-	<h1 class="name">
-		ShoppingControl <?php print $this->version ?>
-	</h1>
-	<?php if (!empty($this->loggedInUser)) { ?>
-    <span class="logininfo">
-        <b><?php print $this->translations->login->loggedinas; ?>:</b>
-        <?php print $this->loggedInUser; ?>
-    </span>
-    <?php } ?>
-</div>
-<?php if ($this->showNavigation) { ?>
-<div class="navigation">
-    <a href="<?php print URLPATH; ?>/">
-        <?php print $this->translations->navigation->new; ?>
-    </a>
-    <a href="<?php print URLPATH; ?>/overview/currentmonth">
-        <?php print $this->translations->navigation->current; ?>
-    </a>
-</div>
-<?php } ?>
+<div class="content-wrapper">
+    <div class="header">
+        <?php if ($this->showNavigation) { ?>
+            <img class="navigation-trigger active" src="img/list.png" alt="<?php print $this->translations->navigation->title; ?>" />
+            <img class="navigation-trigger" src="img/list-active.png" alt="<?php print $this->translations->navigation->title; ?>" />
+        <?php } ?>
+        <h1 class="name">
+            <a href="<?php print URLPATH; ?>/">
+                ShoppingControl <?php print $this->version ?>
+            </a>
+        </h1>
+        <?php if (!empty($this->loggedInUser)) { ?>
+        <a href="<?php print URLPATH; ?>/" class="logininfo">
+            <b><?php print $this->translations->login->loggedinas; ?>:</b>
+            <?php print $this->loggedInUser; ?>
+        </a>
+        <?php } ?>
 
-<div class="content">
-    <?php print $this->layout()->content; ?>
+        <?php if ($this->showNavigation) { ?>
+            <div class="navigation">
+                <a href="<?php print URLPATH; ?>/">
+                    <img src="img/icon-add.png" width="30" height="30" alt="" />
+                    <span><?php print $this->translations->navigation->new; ?></span>
+                </a>
+                <a href="<?php print URLPATH; ?>/overview/currentmonth">
+                    <img src="img/icon-calendar.png" width="30" height="30" alt="" />
+                    <span><?php print $this->translations->navigation->current; ?></span>
+                </a>
+                <a href="<?php print URLPATH; ?>/overview">
+                    <img src="img/icon-books.png" width="30" height="30" alt="" />
+                    <span><?php print $this->translations->navigation->overview; ?></span>
+                </a>
+                <a href="<?php print URLPATH; ?>/admin">
+                    <img src="img/icon-preferences.png" width="30" height="30" alt="" />
+                    <span><?php print $this->translations->navigation->admin; ?></span>
+                </a>
+                <a href="<?php print URLPATH; ?>/logout">
+                    <img src="img/icon-padlock.png" width="30" height="30" alt="" />
+                    <span><?php print $this->translations->logout->logout; ?></span>
+                </a>
+            </div>
+        <?php } ?>
+    </div>
+
+    <div class="content">
+        <?php print $this->layout()->content; ?>
+    </div>
+    <div class="copyright">
+        Shopping Control - Version <?php print $this->version ?><br />
+        &copy; 2014 <a href="http://www.github.com/djungowski">Dominik Jungowski</a><br />
+        Background: &copy; <a href="https://www.flickr.com/photos/naomiyaki/4583474627/">Naomi Rubin</a>
+    </div>
 </div>
-<?php if ($this->showNavigation) { ?>
-<div class="navigation">
-    <a href="<?php print URLPATH; ?>/overview">
-        <?php print $this->translations->navigation->overview; ?>
-    </a>
-    <a href="<?php print URLPATH; ?>/admin">
-        <?php print $this->translations->navigation->admin; ?>
-    </a>
-    <a href="<?php print URLPATH; ?>/logout">
-    	<?php print $this->translations->logout->logout; ?>
-    </a>
-</div>
-<?php } ?>
-<div class="copyright">
-    Shopping Control - Version <?php print $this->version ?><br />
-    &copy; 2012 <a href="http://www.github.com/djungowski">Dominik Jungowski</a>
-</div>
+
+<script type="text/javascript">
+    $('.navigation-trigger').click(function() {
+        $('.navigation').slideToggle(200);
+        $('.navigation-trigger').toggleClass('active');
+    });
+</script>
 </body>
 </html>
