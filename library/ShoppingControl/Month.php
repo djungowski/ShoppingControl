@@ -49,6 +49,11 @@ class ShoppingControl_Month extends ShoppingControl_Table_Abstract
     {
         return $this->_monthName;
     }
+
+    public function getNameAndYear()
+    {
+        return sprintf('%s %s', $this->_monthName, $this->getYear());
+    }
     
     public function getYear()
     {
