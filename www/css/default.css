@@ -87,9 +87,9 @@ input.new-entry {
 }
 
 .message {
-	background: transparent url(../img/icon-info.png) no-repeat calc(100% - 5px) 7px;
+	background: transparent url(../img/icon-info.png) no-repeat calc(100% - 5px) 2px;
 	color: #000;
-	padding: 15px 6px 6px 6px;
+	padding: 6px;
 	min-height: 25px;
 }
 
@@ -97,7 +97,12 @@ input.new-entry {
 	background-color: #2ABB16;
 }
 
+.message.info {
+	padding-right: 40px;
+}
+
 .message.alert {
+	padding: 6px;
 	background-image: url(../img/icon-alert.png);
 }
 

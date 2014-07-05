@@ -1,6 +1,6 @@
 <script type="text/javascript" src="<?php print URLPATH; ?>/js/plugins/jquery.newshop.js?<?php print $this->cachebuster; ?>"></script>
 <?php if (isset($this->success) && $this->success == true): ?>
-    <p class="message green"><?php print $this->successMessage; ?></p>
+    <p class="message green info"><?php print $this->successMessage; ?></p>
 <?php endif; ?>
 
 <form action="<?php print $this->basepath; ?>/default/new" method="post">
