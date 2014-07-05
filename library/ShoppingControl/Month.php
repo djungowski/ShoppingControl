@@ -79,7 +79,7 @@ class ShoppingControl_Month extends ShoppingControl_Table_Abstract
         $rest = $this->getRest();
         if ($rest <= 0) {
             return 'red';
-        } elseif ($rest <= 50) {
+        } elseif ($rest <= ($this->limit * 0.1)) {
             return 'yellow';
         } else {
             return 'green';
