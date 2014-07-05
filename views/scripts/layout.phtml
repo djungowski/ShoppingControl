@@ -56,9 +56,11 @@
         <?php } ?>
     </div>
 
-    <div class="content">
-        <?php require_once BASEPATH . '/views/month-rest.phtml'; ?>
-    </div>
+    <?php if(!empty($this->loggedInUser)) { ?>
+        <div class="content">
+            <?php require_once BASEPATH . '/views/month-rest.phtml'; ?>
+        </div>
+    <?php } ?>
 
     <div class="content">
         <?php print $this->layout()->content; ?>
