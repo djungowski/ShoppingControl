@@ -20,10 +20,10 @@
 <table class="overview" cellspacing="0">
 	<tr>
 		<th class="delete-purchase">&nbsp;</th>
-		<th>
+		<th class="date">
 		    <?php print $this->translations->date; ?>
         </th>
-        <th>
+        <th class="shop">
 		    <?php print $this->translations->shop->name; ?>,
 		    <?php print $this->translations->comment; ?>
 	    </th>
@@ -34,10 +34,10 @@
     	<td class="delete-purchase">
     		<input type="checkbox" name="purchase_id[]" value="<?php print($purchase['purchase_id']); ?>" />
     	</td>
-    	<td valign="top">
+    	<td class="date">
     	    <?php print($purchase['date']); ?>
         </td>
-        <td>
+        <td class="shop">
     	    <?php print($purchase['name']); ?>
     	    <?php if (!empty($purchase['comment'])): ?>
     	    <br /><br />

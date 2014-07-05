@@ -186,16 +186,26 @@ table.overview tr:hover a {
 	color: #fff;
 }
 
-table.overview .amount {
-	text-align: right;
-	vertical-align: top;
-}
-
 table.overview .total {
 	border-top: 1px solid #fff;
 	background-color: #0076EC;
 	color: #fff;
 	font-weight: bold;
+}
+
+table.overview .date {
+	vertical-align: top;
+	width: 100px;
+}
+
+table.overview .shop {
+	width: calc(92% - 200px);
+}
+
+table.overview .amount {
+	text-align: right;
+	vertical-align: top;
+	width: 100px;
 }
 
 table.overview .delete-purchase {
