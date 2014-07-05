@@ -140,7 +140,7 @@ table.overview .year {
 	text-align: center;
 	font-weight: bold;
 	font-size: 20px;
-	background-color: #379;
+	background-color: #0076EC;
 	color: #fff;
 	padding: 6px;
 	cursor: pointer;
@@ -151,7 +151,7 @@ table.overview .hidden {
 }
 
 table.overview tr:hover {
-	background-color: #379;
+	background-color: #0076EC;
 	color: #fff;
 }
 
@@ -160,12 +160,12 @@ table.overview td {
 }
 
 table.overview td a:hover {
-	background-color: #379;
+	background-color: #0076EC;
 }
 
 table.overview th {
 	width: 25%;
-	background-color: #379;
+	background-color: #0076EC;
 	border-bottom: 1px solid #ddd;
 	color: #fff;
 	font-weight: bold;
@@ -193,7 +193,7 @@ table.overview .amount {
 
 table.overview .total {
 	border-top: 1px solid #fff;
-	background-color: #379;
+	background-color: #0076EC;
 	color: #fff;
 	font-weight: bold;
 }
@@ -223,7 +223,7 @@ table.overview .delete-purchase {
 }
 
 .edit-purchases:active {
-	background-color: #369;
+	background-color: #0076EC;
 	color: #fff;
 }
 
