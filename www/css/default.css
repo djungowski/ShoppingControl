@@ -108,6 +108,49 @@ div.message {
 	margin: 0.3em 0;
 }
 
+.month-rest {
+	overflow: hidden;
+}
+
+.month-rest p {
+	margin: 0;
+	padding: 0;
+}
+
+.month-rest .rest {
+	float: left;
+}
+
+.month-rest .traffic-light {
+	float: right;
+}
+
+.traffic-light {
+
+}
+
+.traffic-light span {
+	border: 1px solid #000;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	display: block;
+	float: left;
+	margin-right: 5px;
+}
+
+.traffic-light .green {
+	background-color: #2ABB16;
+}
+
+.traffic-light .yellow {
+	background-color: #E0E910;
+}
+
+.traffic-light .red {
+	background-color: #D81919;
+}
+
 .copyright {
 	text-align: center;
 	color: #fff;
