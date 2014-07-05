@@ -1,5 +1,5 @@
 <?php if (!$this->monthExists): ?>
-<div class="message">
+<div class="message alert">
     <p><?php print $this->translations->month->notexisting; ?></p>
     <p>
         <form action="<?php print $this->basepath; ?>/month/createlimit" method="post">
@@ -7,7 +7,7 @@
         	<input type="hidden" name="forward-action" value="<?php print $this->actionName; ?>" />
         	<?php print $this->translations->limit . ' (' . $this->currency . ')'; ?>:
         	<input type="text" name="limit" value="<?php print $this->monthLimit; ?>" />
-        	<input type="hidden" name="month" value="<?php print $this->month; ?>" />
+        	<input type="hidden" name="month" value="<?php print $this->currentMonth; ?>" />
         	<input type="submit" value="<?php print $this->translations->insert; ?>" />
         </form>
     </p>

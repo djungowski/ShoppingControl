@@ -41,6 +41,7 @@ class ShoppingControl_Controller_Action extends Zend_Controller_Action
         $month = new ShoppingControl_Month($monthString);
         $this->view->month = $month;
         if (!$month->exists()) {
+            $this->view->currentMonth = $monthString;
             $this->view->monthExists = false;
             $this->view->monthLimit = $config->limit->month;
         } else {
