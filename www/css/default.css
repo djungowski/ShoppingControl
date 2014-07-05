@@ -182,6 +182,10 @@ table.overview a {
 	background: none;
 }
 
+table.overview tr {
+	height: 40px;
+}
+
 table.overview tr:hover a {
 	color: #fff;
 }
@@ -194,18 +198,31 @@ table.overview .total {
 }
 
 table.overview .date {
-	vertical-align: top;
-	width: 100px;
+	/*vertical-align: top;*/
+	width: 15%;
 }
 
 table.overview .shop {
-	width: calc(92% - 200px);
+	width: 62%;
+}
+
+table.overview .shop .down {
+	display: none;
+}
+
+table.overview .shop .comment {
+	margin: 1em 0 0;
+	display: none;
 }
 
 table.overview .amount {
 	text-align: right;
+	/*vertical-align: top;*/
+	width: 15%;
+}
+
+table.overview .comment-open .date, table.overview .comment-open .amount {
 	vertical-align: top;
-	width: 100px;
 }
 
 table.overview .delete-purchase {

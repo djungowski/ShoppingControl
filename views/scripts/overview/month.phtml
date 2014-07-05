@@ -40,10 +40,12 @@
         <td class="shop">
     	    <?php print($purchase['name']); ?>
     	    <?php if (!empty($purchase['comment'])): ?>
-    	    <br /><br />
-    	    <strong><?php print $this->translations->comment; ?>:</strong>
-    	    <br />
-    	    <?php print($purchase['comment']); ?>
+            <img class="comment-toggle" src="<?php print URLPATH; ?>/img/icon-info.png" />
+            <p class="comment">
+                <strong><?php print $this->translations->comment; ?>:</strong>
+                <br />
+                <?php print($purchase['comment']); ?>
+            </p>
     	    <?php endif; ?>
 	    </td>
     	<td class="amount"><?php print($purchase['amount'] . ' ' . $this->currency); ?></td>
@@ -75,4 +77,16 @@ $('.edit-purchases-buttons').purchaseeditor({
     safetyQuestion: '<?php print $this->translations->question->deletepurchase; ?>',
     purchaseClass: 'purchase'
 });
+
+$('tr').click(function() {
+    if ($('.edit-purchases.delete').is(':visible')) {
+        return;
+    }
+    var tr = $(this);
+    var comment = tr.find('.comment');
+    if (comment.length > 0) {
+        comment.slideToggle(200);
+        tr.toggleClass('comment-open');
+    }
+})
 </script>
