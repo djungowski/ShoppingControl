@@ -46,7 +46,6 @@ class ShoppingControl_Controller_Action extends Zend_Controller_Action
         } else {
             $this->view->monthExists = true;
             $this->view->monthLimit = $month->limit;
-            $this->view->monthRest = $month->rest;
         }
     }
 }
