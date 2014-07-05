@@ -202,8 +202,8 @@ table.overview .total {
 }
 
 table.overview .date {
-	/*vertical-align: top;*/
 	width: 15%;
+	font-weight: bold;
 }
 
 table.overview .shop {
@@ -221,7 +221,6 @@ table.overview .shop .comment {
 
 table.overview .amount {
 	text-align: right;
-	/*vertical-align: top;*/
 	width: 15%;
 }
 
