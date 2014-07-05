@@ -73,6 +73,18 @@ class ShoppingControl_Month extends ShoppingControl_Table_Abstract
     {
         return $this->limit - $this->spent();            
     }
+
+    public function getStatus()
+    {
+        $rest = $this->getRest();
+        if ($rest <= 0) {
+            return 'red';
+        } elseif ($rest <= 50) {
+            return 'yellow';
+        } else {
+            return 'green';
+        }
+    }
     
     public function spent()
     {

@@ -92,33 +92,18 @@ div.message {
 	margin-bottom: 0.5em;
 }
 
-/** Rest is negative */
-.month-rest-0 {
-	background-color: #D81919;
-	color: #fff;
-	padding: 0.2em;
-	margin: 0.3em 0;
-}
-
-/** Rest is positive */
-.month-rest-1 {
-	background-color: #2ABB16;
-	color: #339;
-	padding: 0.2em;
-	margin: 0.3em 0;
-}
-
 .month-rest {
 	overflow: hidden;
 }
 
 .month-rest p {
 	margin: 0;
-	padding: 0;
 }
 
 .month-rest .rest {
 	float: left;
+	padding: 0;
+	margin-top: 5px;
 }
 
 .month-rest .traffic-light {
@@ -126,29 +111,38 @@ div.message {
 }
 
 .traffic-light {
-
+	background-color: #4E4545;
+	padding: 5px;
 }
 
 .traffic-light span {
-	border: 1px solid #000;
-	width: 20px;
-	height: 20px;
-	border-radius: 10px;
+	border: 1px solid #8B8B71;
+	background-color: #8F8A8A;
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
 	display: block;
 	float: left;
 	margin-right: 5px;
 }
 
-.traffic-light .green {
+.traffic-light span:last-child {
+	margin-right: 0;
+}
+
+.traffic-light.green .green {
 	background-color: #2ABB16;
+	border-color: #2ABB16;
 }
 
-.traffic-light .yellow {
+.traffic-light.yellow .yellow {
 	background-color: #E0E910;
+	border-color: #E0E910;
 }
 
-.traffic-light .red {
+.traffic-light.red .red {
 	background-color: #D81919;
+	border-color: #D81919;
 }
 
 .copyright {

@@ -13,14 +13,14 @@
     </p>
 </div>
 <?php else:?>
-<div class="month-rest month-rest-<?php print((int)($this->month->rest > 0)); ?>">
+<div class="month-rest">
     <p class="rest">
         <b><?php print $this->translations->month->rest . ' ' . $this->month->getNameAndYear() ?>:</b>
         <?php print $this->month->rest; ?>
         <?php print $this->currency; ?>
     </p>
 
-    <p class="traffic-light">
+    <p class="traffic-light <?php print $this->month->getStatus(); ?>">
         <span class="green"></span>
         <span class="yellow"></span>
         <span class="red"></span>
