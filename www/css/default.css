@@ -22,6 +22,15 @@ a:hover {
 	background-color: rgba(255, 255, 255, 0.95);
 }
 
+.ui-widget a {
+	background: none;
+	border: none;
+	padding: 0;
+	display: inline;
+	color: transparent;
+	margin: 0;
+}
+
 h1 {
 	margin: 0;
 }
