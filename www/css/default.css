@@ -206,12 +206,25 @@ table.overview .delete-purchase {
 
 .edit-purchases {
 	border: 1px solid #aaa;
-	padding: 6px;
-	width: 150px;
-	text-align: center;
+	padding: 6px 40px 6px 13px;
+	width: 110px;
 	text-decoration: none;
 	font-weight: bold;
 	color: #369;
+	background-repeat: no-repeat;
+	background-position: calc(100% - 5px) center;
+}
+
+.edit-purchases.edit {
+	background-image: url(../img/icon-pencil.png);
+}
+
+.edit-purchases.delete {
+	background-image: url(../img/icon-delete.png);
+}
+
+.edit-purchases.cancel {
+	background-image: url(../img/icon-cancel.png);
 }
 
 .edit-purchases-buttons {
