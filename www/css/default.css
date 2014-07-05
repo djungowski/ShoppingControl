@@ -90,7 +90,7 @@ input.new-entry {
 	background: #2ABB16 url(../img/icon-info.png) no-repeat calc(100% - 5px) 7px;
 	color: #000;
 	padding: 15px 40px 6px 6px;
-	height: 25px;
+	min-height: 25px;
 }
 
 div.message {
