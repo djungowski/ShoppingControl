@@ -21,7 +21,9 @@
 	<tr>
 		<th class="delete-purchase">&nbsp;</th>
 		<th>
-		    <?php print $this->translations->date; ?>,
+		    <?php print $this->translations->date; ?>
+        </th>
+        <th>
 		    <?php print $this->translations->shop->name; ?>,
 		    <?php print $this->translations->comment; ?>
 	    </th>
@@ -32,9 +34,10 @@
     	<td class="delete-purchase">
     		<input type="checkbox" name="purchase_id[]" value="<?php print($purchase['purchase_id']); ?>" />
     	</td>
-    	<td>
+    	<td valign="top">
     	    <?php print($purchase['date']); ?>
-    	    <br />
+        </td>
+        <td>
     	    <?php print($purchase['name']); ?>
     	    <?php if (!empty($purchase['comment'])): ?>
     	    <br /><br />
@@ -48,7 +51,7 @@
     <?php endforeach; ?>
     <tr>
     	<td class="delete-purchase total">&nbsp;</td>
-    	<td class="total"><?php print($this->translations->spent); ?></td>
+    	<td class="total" colspan="2"><?php print($this->translations->spent); ?></td>
     	<td class="amount total"><?php print($this->spent . ' ' . $this->currency); ?></td>
     </tr>
 </table>
